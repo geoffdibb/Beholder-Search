@@ -25,7 +25,7 @@ public class SearchController {
 	}
 
 	@GetMapping("/getLocation/{location}")
-	public ResponseEntity<String> getLocation(@PathVariable("name") String location) {
+	public ResponseEntity<String> getLocation(@PathVariable("location") String location) {
 		return service.getLocation(location);
 	}
 
