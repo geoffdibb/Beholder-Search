@@ -13,14 +13,15 @@ import com.bae.repository.CitizenRepository;
 
 @Service
 public class SearchServiceImpl implements SearchService {
+	
 
 	@Autowired
 	private CitizenRepository repository;
 
 	
 	@Override
-	public ArrayList<Citizen> getName(String name) {
-		ArrayList<Citizen> foundList = new ArrayList<Citizen>();
+	public List<Citizen> getName(String name) {
+		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
 			if (name == list.get(i).getForenames()) {
@@ -31,8 +32,8 @@ public class SearchServiceImpl implements SearchService {
 		}
 
 	@Override
-	public ArrayList<Citizen> getLocation(String location) {
-		ArrayList<Citizen> foundList = new ArrayList<Citizen>();
+	public List<Citizen> getLocation(String location) {
+		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
 			if (location == list.get(i).getHomeAddress()) {
@@ -46,8 +47,8 @@ public class SearchServiceImpl implements SearchService {
 	
 
 	@Override
-	public ArrayList<Citizen> getCarReg(String carreg) {
-		ArrayList<Citizen> foundList = new ArrayList<Citizen>();
+	public List<Citizen> getCarReg(String carreg) {
+		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
 			if (carreg == list.get(i).getVehicleRegistrationNumber()) {
@@ -58,8 +59,8 @@ public class SearchServiceImpl implements SearchService {
 
 		}
 	@Override
-	public ArrayList<Citizen> getId(String id) {
-		ArrayList<Citizen> foundList = new ArrayList<Citizen>();
+	public List<Citizen> getId(String id) {
+		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
 			if (id == list.get(i).getCitizenId()) {
