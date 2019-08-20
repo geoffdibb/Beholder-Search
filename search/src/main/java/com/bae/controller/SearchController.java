@@ -1,10 +1,8 @@
 package com.bae.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,32 +12,40 @@ import com.bae.entity.Citizen;
 import com.bae.service.SearchService;
 
 @RestController
-@RequestMapping("/search")
+@RequestMapping("${path.requestLogs}")
 public class SearchController {
-	public SearchService service;
+	private SearchService service;
 
 	@Autowired
 	public SearchController(SearchService service) {
 		this.service = service;
 	}
 
-	@GetMapping("/name/{name}")
-	public ArrayList<Citizen> getName(@PathVariable("name") String name) {
+	public SearchService getService() {
+		return service;
+	}
+
+	public void setService(SearchService service) {
+		this.service = service;
+	}
+
+	@GetMapping("${path.getCitizenNameLogs}")
+	public List<Citizen> getName(@PathVariable("name") String name) {
 		return service.getName(name);
 	}
 
-	@GetMapping("/location/{location}")
-	public ArrayList<Citizen> getLocation(@PathVariable("location") String location) {
+	@GetMapping("${path.getCitizenLogs}")
+	public List<Citizen> getLocation(@PathVariable("location") String location) {
 		return service.getLocation(location);
 	}
 
-	@GetMapping("/carreg/{carreg}")
-	public ArrayList<Citizen> getCarReg(@PathVariable("carreg") String carreg) {
+	@GetMapping("${path.getCitizenCarRegLogs}")
+	public List<Citizen> getCarReg(@PathVariable("carreg") String carreg) {
 		return service.getCarReg(carreg);
 	}
 	
-	@GetMapping("/id/{id}")
-	public ArrayList<Citizen> getId(@PathVariable("id") String id) {
+	@GetMapping("${path.getIDLogs}")
+	public List<Citizen> getId(@PathVariable("id") String id) {
 		return service.getId(id);
 	}
 }

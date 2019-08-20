@@ -1,5 +1,6 @@
 package com.bae.entity;
 
+
 public class Citizen {
 	private String citizenId;
 	private String forenames;

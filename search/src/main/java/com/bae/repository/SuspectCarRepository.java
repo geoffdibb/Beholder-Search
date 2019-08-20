@@ -3,10 +3,8 @@ package com.bae.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bae.entity.Associate;
+import com.bae.entity.SuspectCar;
 @Repository
-	public interface AssociateRepository extends MongoRepository<Associate, Long> {
+	public interface SuspectCarRepository extends MongoRepository<SuspectCar, Long> {
 
-	}
-
-
+}

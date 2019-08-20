@@ -1,20 +1,20 @@
 package com.bae.service;
 
-import java.util.ArrayList;
+import java.util.List;
 
-
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import com.bae.entity.Citizen;
 
+@Service
 public interface SearchService {
 
-		ArrayList<Citizen> getName(String name);
+		List<Citizen> getName(String name);
 		
-		ArrayList<Citizen> getLocation(String location);
+		List<Citizen> getLocation(String location);
 
-		ArrayList<Citizen> getCarReg(String carreg);
+		List<Citizen> getCarReg(String carreg);
 		
-		ArrayList<Citizen> getId(String id);
+		List<Citizen> getId(String id);
 
 }

@@ -5,36 +5,38 @@ package com.bae.service;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bae.entity.Citizen;
 import com.bae.repository.CitizenRepository;
+
 @Service
 public class SearchServiceImpl implements SearchService {
+	
 
+	@Autowired 
 	private CitizenRepository repository;
 
 	
 	@Override
-	public ArrayList<Citizen> getName(String name) {
-		ArrayList<Citizen> foundList = new ArrayList<Citizen>();
+	public List<Citizen> getName(String name) {
+		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
-			if (name == list.get(i).getForenames()) {
+			if (name.contentEquals( list.get(i).getForenames())) {
 				foundList.add(list.get(i));
-				}
+				}  
 		}
 		return foundList;
 		}
 
 	@Override
-	public ArrayList<Citizen> getLocation(String location) {
-		ArrayList<Citizen> foundList = new ArrayList<Citizen>();
+	public List<Citizen> getLocation(String location) {
+		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
-			if (location == list.get(i).getHomeAddress()) {
+			if (location.equals( list.get(i).getHomeAddress())) {
 				foundList.add(list.get(i));
 				}
 			
@@ -45,11 +47,11 @@ public class SearchServiceImpl implements SearchService {
 	
 
 	@Override
-	public ArrayList<Citizen> getCarReg(String carreg) {
-		ArrayList<Citizen> foundList = new ArrayList<Citizen>();
+	public List<Citizen> getCarReg(String carreg) {
+		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
-			if (carreg == list.get(i).getVehicleRegistrationNumber()) {
+			if (carreg.equals( list.get(i).getVehicleRegistrationNumber())) {
 				foundList.add(list.get(i));
 				}
 		}
@@ -57,11 +59,11 @@ public class SearchServiceImpl implements SearchService {
 
 		}
 	@Override
-	public ArrayList<Citizen> getId(String id) {
-		ArrayList<Citizen> foundList = new ArrayList<Citizen>();
+	public List<Citizen> getId(String id) {
+		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
-			if (id == list.get(i).getCitizenId()) {
+			if (id.contentEquals( list.get(i).getCitizenId())){
 				foundList.add(list.get(i));
 				}
 		}
