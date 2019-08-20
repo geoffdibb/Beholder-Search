@@ -24,7 +24,7 @@ public class SearchServiceImpl implements SearchService {
 		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
-			if (name == list.get(i).getForenames()) {
+			if (name.contentEquals( list.get(i).getForenames())) {
 				foundList.add(list.get(i));
 				}  
 		}
@@ -36,7 +36,7 @@ public class SearchServiceImpl implements SearchService {
 		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
-			if (location == list.get(i).getHomeAddress()) {
+			if (location.equals( list.get(i).getHomeAddress())) {
 				foundList.add(list.get(i));
 				}
 			
@@ -51,7 +51,7 @@ public class SearchServiceImpl implements SearchService {
 		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
-			if (carreg == list.get(i).getVehicleRegistrationNumber()) {
+			if (carreg.equals( list.get(i).getVehicleRegistrationNumber())) {
 				foundList.add(list.get(i));
 				}
 		}
@@ -63,7 +63,7 @@ public class SearchServiceImpl implements SearchService {
 		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
 		for (int i = 0; i<list.size(); i++) {
-			if (id == list.get(i).getCitizenId()) {
+			if (id.contentEquals( list.get(i).getCitizenId())){
 				foundList.add(list.get(i));
 				}
 		}
