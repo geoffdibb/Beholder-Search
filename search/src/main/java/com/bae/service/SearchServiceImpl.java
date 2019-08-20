@@ -15,7 +15,7 @@ import com.bae.repository.CitizenRepository;
 public class SearchServiceImpl implements SearchService {
 	
 
-	@Autowired
+	@Autowired 
 	private CitizenRepository repository;
 
 	
