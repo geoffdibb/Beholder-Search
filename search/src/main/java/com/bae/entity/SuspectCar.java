@@ -121,7 +121,7 @@ public class SuspectCar {
 
 
 
-		public void setYears_owned(String yearsOwned) {
+		public void setYearsOwned(String yearsOwned) {
 			this.years_owned = yearsOwned;
 		}
 
@@ -135,7 +135,7 @@ public class SuspectCar {
 
 
 
-		public void setNo_of_owners(String noOfOwners) {
+		public void setNoOfOwners(String noOfOwners) {
 			this.no_of_owners = noOfOwners;
 		}
 		

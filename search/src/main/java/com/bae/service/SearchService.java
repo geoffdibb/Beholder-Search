@@ -9,12 +9,12 @@ import com.bae.entity.Citizen;
 @Service
 public interface SearchService {
 
-	List<Citizen> getName(String name);
+		List<Citizen> getName(String name);
+		
+		List<Citizen> getLocation(String location);
 
-	List<Citizen> getLocation(String location);
-
-	List<Citizen> getCarReg(String carreg);
-
-	List<Citizen> getId(String id);
+		List<Citizen> getCarReg(String carreg);
+		
+		List<Citizen> getId(String id);
 
 }

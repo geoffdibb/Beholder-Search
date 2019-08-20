@@ -1,5 +1,7 @@
 package com.bae.entities;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import com.bae.entity.Incident;
@@ -70,45 +72,45 @@ public class IncidentTest {
 	@Test
 	public void testSetterLongitude() {
 		account.setLongitude("sample2");
-		Assert.assertEquals(account.getLongitude(), "sample2");
+		assertEquals(account.getLongitude(), "sample2");
 		
 	}
 	@Test
 	public void testGetterLatitude() {
 
-		Assert.assertEquals(account.getLatitude(), "sample");
+		assertEquals(account.getLatitude(), "sample");
 	}
 
 	@Test
 	public void testSetterLatitude() {
 		account.setLatitude("sample2");
-		Assert.assertEquals(account.getLatitude(), "sample2");
+		assertEquals(account.getLatitude(), "sample2");
 		
 	}
 	
 	@Test
 	public void testGetterType() {
 
-		Assert.assertEquals(account.getType(), "sample");
+		assertEquals(account.getType(), "sample");
 	}
 
 	@Test
 	public void testSetterType() {
 		account.setType("sample2");
-		Assert.assertEquals(account.getType(), "sample2");
+		assertEquals(account.getType(), "sample2");
 		
 	}
 	
 	@Test
 	public void testGetterDetail() {
 
-		Assert.assertEquals(account.getDetail(), "sample");
+		assertEquals(account.getDetail(), "sample");
 	}
 
 	@Test
 	public void testSetterDetail() {
 		account.setDetail("sample2");
-		Assert.assertEquals(account.getDetail(), "sample2");
+		assertEquals(account.getDetail(), "sample2");
 		
 	}
 }

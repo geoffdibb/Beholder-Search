@@ -1,5 +1,7 @@
 package com.bae.entities;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import com.bae.entity.SuspectCar;
@@ -12,97 +14,97 @@ public class SuspectCarTests {
 		@Test
 		public void testGetterCitizenId() {
 
-			Assert.assertEquals(account.getCitizenID(), "sample");
+			assertEquals(account.getCitizenID(), "sample");
 		}
 
 		@Test
 		public void testSetterCitizenId() {
 			account.setCitizenID("sample2");
-			Assert.assertEquals(account.getCitizenID(), "sample2");
+			assertEquals(account.getCitizenID(), "sample2");
 		}
 		
 		@Test
 		public void testGetterOwner() {
 
-			Assert.assertEquals(account.getOwner(), "sample");
+			assertEquals(account.getOwner(), "sample");
 		}
 
 		@Test
 		public void testSetterOwner() {
 			account.setOwner("sample2");
-			Assert.assertEquals(account.getOwner(), "sample2");
+			assertEquals(account.getOwner(), "sample2");
 		}
 		
 		@Test
 		public void testGetterCarReg() {
 
-			Assert.assertEquals(account.getCarReg(), "sample");
+			assertEquals(account.getCarReg(), "sample");
 		}
 
 		@Test
 		public void testSetterCarReg() {
 			account.setCarReg("sample2");
-			Assert.assertEquals(account.getCarReg(), "sample2");
+			assertEquals(account.getCarReg(), "sample2");
 		}
 		
 		@Test
 		public void testGetterMake() {
 
-			Assert.assertEquals(account.getMake(), "sample");
+			assertEquals(account.getMake(), "sample");
 		}
 
 		@Test
 		public void testSetterMake() {
 			account.setMake("sample2");
-			Assert.assertEquals(account.getMake(), "sample2");
+			assertEquals(account.getMake(), "sample2");
 		}
 		
 		@Test
 		public void testGetterModel() {
 
-			Assert.assertEquals(account.getModel(), "sample");
+			assertEquals(account.getModel(), "sample");
 		}
 
 		@Test
 		public void testSetterModel() {
 			account.setModel("sample2");
-			Assert.assertEquals(account.getModel(), "sample2");
+			assertEquals(account.getModel(), "sample2");
 		}
 		
 		@Test
 		public void testGetterColour() {
 
-			Assert.assertEquals(account.getColour(), "sample");
+			assertEquals(account.getColour(), "sample");
 		}
 
 		@Test
 		public void testSetterColourl() {
 			account.setColour("sample2");
-			Assert.assertEquals(account.getColour(), "sample2");
+			assertEquals(account.getColour(), "sample2");
 		}
 		
 		@Test
 		public void testGetteryears_owned() {
 
-			Assert.assertEquals(account.getYearsOwned(), "sample");
+			assertEquals(account.getYearsOwned(), "sample");
 		}
 
 		@Test
 		public void testSetteryears_owned() {
-			account.setYears_owned("sample2");
-			Assert.assertEquals(account.getYearsOwned(), "sample2");
+			account.setYearsOwned("sample2");
+			assertEquals(account.getYearsOwned(), "sample2");
 		}
 		
 		@Test
 		public void testGetternoOfOwners() {
 
-			Assert.assertEquals(account.getNoOfOwners(), "sample");
+			assertEquals(account.getNoOfOwners(), "sample");
 		}
 
 		@Test
 		public void testSetternoOfOwners() {
-			account.setNo_of_owners("sample2");
-			Assert.assertEquals(account.getNoOfOwners(), "sample2");
+			account.setNoOfOwners("sample2");
+			assertEquals(account.getNoOfOwners(), "sample2");
 		}
 
 }
