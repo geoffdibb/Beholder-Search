@@ -30,8 +30,8 @@ public class IncidentTest {
 
 	@Test
 	public void testSetterCitizen() {
-		account.setCitizenId("sample2");
-		Assert.assertEquals(account.getCitizenId(), "sample2");
+		account.setCitizen("sample2");
+		Assert.assertEquals(account.getCitizen(), "sample2");
 		
 	}
 	

@@ -5,15 +5,16 @@ package com.bae.service;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bae.entity.Citizen;
 import com.bae.repository.CitizenRepository;
+
 @Service
 public class SearchServiceImpl implements SearchService {
 
+	@Autowired
 	private CitizenRepository repository;
 
 	
@@ -24,7 +25,7 @@ public class SearchServiceImpl implements SearchService {
 		for (int i = 0; i<list.size(); i++) {
 			if (name == list.get(i).getForenames()) {
 				foundList.add(list.get(i));
-				}
+				}  
 		}
 		return foundList;
 		}

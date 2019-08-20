@@ -2,11 +2,11 @@ package com.bae.service;
 
 import java.util.ArrayList;
 
-
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import com.bae.entity.Citizen;
 
+@Service
 public interface SearchService {
 
 		ArrayList<Citizen> getName(String name);

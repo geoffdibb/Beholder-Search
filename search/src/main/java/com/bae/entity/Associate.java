@@ -1,5 +1,6 @@
 package com.bae.entity;
 
+//@Entity
 public class Associate {
 
 	private String name;

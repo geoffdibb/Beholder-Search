@@ -1,5 +1,9 @@
 package com.bae.entity;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+//@Entity
+
 public class Incident {
 
 	public String getCitizenId() {
