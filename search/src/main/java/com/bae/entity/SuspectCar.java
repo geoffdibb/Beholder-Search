@@ -1,6 +1,5 @@
 package com.bae.entity;
 
-//@Entity
 public class SuspectCar {
 
 		private String citizenID;
