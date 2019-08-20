@@ -9,84 +9,84 @@ import com.bae.entity.Citizen;
 import junit.framework.Assert;
 
 public class CitizenTests {
-		Citizen account = new Citizen("sample", "sample", "sample", 1, "sample", "sample");
+		Citizen account = new Citizen("citizenid", "forename", "surname", 1, "homeaddress", "carplates");
 
 		
 		@Test
 		public void testGetterCitizenId() {
 
-			assertEquals(account.getCitizenId(), "sample");
+			assertEquals("citizenid",account.getCitizenId());
 		}
 
 		@Test
 		public void testSetterCitizenId() {
-			account.setCitizenId("sample2");
-			assertEquals(account.getCitizenId(), "sample2");
+			account.setCitizenId("citizenid2");
+			assertEquals( "citizenid2",account.getCitizenId());
 			
 		}
 		
 		@Test
 		public void testGetterForeNames() {
 
-			assertEquals(account.getForenames(), "sample");
+			assertEquals( "forename",account.getForenames());
 		}
 
 		@Test
 		public void testSetterForeNames() {
-			account.setForenames("sample2");
-			assertEquals(account.getForenames(), "sample2");
+			account.setForenames("forename2");
+			assertEquals("forename2" ,account.getForenames());
 			
 		}
 		
 		@Test
 		public void testGetterSurname() {
 
-			assertEquals(account.getSurname(), "sample");
+			assertEquals( "surname", account.getSurname());
 		}
 
 		@Test
 		public void testSetterSurname() {
-			account.setSurname("sample2");
-			assertEquals(account.getSurname(), "sample2");
+			account.setSurname("surname2");
+			assertEquals( "surname2",account.getSurname());
 			
 		}
 		
 		@Test
 		public void testGetterDateOfBirth() {
 
-			assertEquals(account.getDateOfBirth(), 1);
+			assertEquals(1,account.getDateOfBirth());
 		}
 
 		@Test
 		public void testSetterDateOfBirth() {
 			account.setDateOfBirth(2);
-			assertEquals(account.getDateOfBirth(), 2);
+			assertEquals(2, account.getDateOfBirth());
 			
 		}
 		
 		@Test
 		public void testGetterHomeAddress() {
 
-			assertEquals(account.getHomeAddress(), "sample");
+			assertEquals( "homeaddress", account.getHomeAddress());
 		}
 
 		@Test
 		public void testSetterHomeAddress() {
-			account.setHomeAddress("sample2");
-			assertEquals(account.getHomeAddress(), "sample2");
+			account.setHomeAddress("homeaddress2");
+			assertEquals("homeaddress2", account.getHomeAddress());
 			
 		}
 		
 		@Test
 		public void testGetterVehicleRegistrationNumber() {
 
-			assertEquals(account.getVehicleRegistrationNumber(), "sample");
+			assertEquals( "carplates", account.getVehicleRegistrationNumber());
 		}
 
 		@Test
 		public void testSetterVehicleRegistrationNumber() {
-			account.setVehicleRegistrationNumber("sample2");
-			assertEquals(account.getVehicleRegistrationNumber(), "sample2");
+			account.setVehicleRegistrationNumber("carplates2");
+			assertEquals("carplates2", account.getVehicleRegistrationNumber());
 			
 		}
 }

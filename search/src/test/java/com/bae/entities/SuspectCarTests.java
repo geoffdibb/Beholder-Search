@@ -9,102 +9,102 @@ import com.bae.entity.SuspectCar;
 import junit.framework.Assert;
 
 public class SuspectCarTests {
-		SuspectCar account = new SuspectCar("sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample");
+		SuspectCar account = new SuspectCar("citizenid", "owner", "carreg", "make", "model", "colour", "yearsowned", "noofowners");
 
 		@Test
 		public void testGetterCitizenId() {
 
-			assertEquals(account.getCitizenID(), "sample");
+			assertEquals("citizenid",account.getCitizenID() );
 		}
 
 		@Test
 		public void testSetterCitizenId() {
-			account.setCitizenID("sample2");
-			assertEquals(account.getCitizenID(), "sample2");
+			account.setCitizenID("citizenid2");
+			assertEquals("citizenid2",account.getCitizenID() );
 		}
 		
 		@Test
 		public void testGetterOwner() {
 
-			assertEquals(account.getOwner(), "sample");
+			assertEquals( "owner",account.getOwner());
 		}
 
 		@Test
 		public void testSetterOwner() {
-			account.setOwner("sample2");
-			assertEquals(account.getOwner(), "sample2");
+			account.setOwner("owner2");
+			assertEquals( "owner2",account.getOwner());
 		}
 		
 		@Test
 		public void testGetterCarReg() {
 
-			assertEquals(account.getCarReg(), "sample");
+			assertEquals( "carreg",account.getCarReg());
 		}
 
 		@Test
 		public void testSetterCarReg() {
-			account.setCarReg("sample2");
-			assertEquals(account.getCarReg(), "sample2");
+			account.setCarReg("carreg2");
+			assertEquals("carreg2",account.getCarReg() );
 		}
 		
 		@Test
 		public void testGetterMake() {
 
-			assertEquals(account.getMake(), "sample");
+			assertEquals( "make",account.getMake());
 		}
 
 		@Test
 		public void testSetterMake() {
-			account.setMake("sample2");
-			assertEquals(account.getMake(), "sample2");
+			account.setMake("make2");
+			assertEquals( "make2",account.getMake());
 		}
 		
 		@Test
 		public void testGetterModel() {
 
-			assertEquals(account.getModel(), "sample");
+			assertEquals( "model",account.getModel());
 		}
 
 		@Test
 		public void testSetterModel() {
-			account.setModel("sample2");
-			assertEquals(account.getModel(), "sample2");
+			account.setModel("model2");
+			assertEquals( "model2",account.getModel());
 		}
 		
 		@Test
 		public void testGetterColour() {
 
-			assertEquals(account.getColour(), "sample");
+			assertEquals( "colour",account.getColour());
 		}
 
 		@Test
 		public void testSetterColourl() {
-			account.setColour("sample2");
-			assertEquals(account.getColour(), "sample2");
+			account.setColour("colour2");
+			assertEquals( "colour2",account.getColour());
 		}
 		
 		@Test
 		public void testGetteryears_owned() {
 
-			assertEquals(account.getYearsOwned(), "sample");
+			assertEquals( "yearsowned",account.getYearsOwned());
 		}
 
 		@Test
 		public void testSetteryears_owned() {
-			account.setYearsOwned("sample2");
-			assertEquals(account.getYearsOwned(), "sample2");
+			account.setYearsOwned("yearsowned2");
+			assertEquals( "yearsowned2",account.getYearsOwned());
 		}
 		
 		@Test
 		public void testGetternoOfOwners() {
 
-			assertEquals(account.getNoOfOwners(), "sample");
+			assertEquals( "noofowners",account.getNoOfOwners());
 		}
 
 		@Test
 		public void testSetternoOfOwners() {
-			account.setNoOfOwners("sample2");
-			assertEquals(account.getNoOfOwners(), "sample2");
+			account.setNoOfOwners("noofowners2");
+			assertEquals( "noofowners2",account.getNoOfOwners());
 		}
 
 }

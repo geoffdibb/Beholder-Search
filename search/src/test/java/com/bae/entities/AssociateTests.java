@@ -9,40 +9,40 @@ import com.bae.entity.Associate;
 import junit.framework.Assert;
 
 public class AssociateTests {
-	Associate account = new Associate("Zilla", 1, "Sample");
+	Associate account = new Associate("name", 1, "nophone");
 
 	@Test
 	public void testGetterName() {
 
-		assertEquals(account.getName(), "Zilla");
+		assertEquals( "name",account.getName());
 	}
 
 	@Test
 	public void testSetterName() {
-		account.setName("Zilla2");
-		assertEquals(account.getName(), "Zilla2");
+		account.setName("name2");
+		assertEquals( "name2",account.getName());
 		
 	}
 	@Test
 	public void testGetterNoOfPhoneCalls() {
 
-		assertEquals(account.getNumberOfPhoneCalls(), 1);
+		assertEquals(1,account.getNumberOfPhoneCalls());
 	}
 
 	@Test
 	public void testSetterNoOfPhoneCalls() {
 		account.setNumberOfPhoneCalls(2);
-		assertEquals(account.getNumberOfPhoneCalls(), 2);
+		assertEquals(2,account.getNumberOfPhoneCalls());
 	}
 	@Test
 	public void testGetterLatestPhoneCall() {
 
-		assertEquals(account.getLatestPhoneCall(), "Sample");
+		assertEquals( "nophone",account.getLatestPhoneCall());
 	}
 
 	@Test
 	public void testSetterLatestPhoneCall() {
-		account.setLatestPhoneCall("Sample");
-		assertEquals(account.getLatestPhoneCall(), "Sample");
+		account.setLatestPhoneCall("nophone2");
+		assertEquals("nophone2" ,account.getLatestPhoneCall() );
 	}
 }
