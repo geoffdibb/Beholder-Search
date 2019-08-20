@@ -14,17 +14,17 @@ public class SuspectCar {
 		
 		
 		
-		public SuspectCar(String citizenID, String owner, String car_reg, String make, String model, String colour,
-				String years_owned, String no_of_owners) {
+		public SuspectCar(String citizenID, String owner, String carReg, String make, String model, String colour,
+				String yearsOwned, String noOfOwners) {
 			super();
 			this.citizenID = citizenID;
 			this.owner = owner;
-			this.car_reg = car_reg;
+			this.car_reg = carReg;
 			this.make = make;
 			this.model = model;
 			this.colour = colour;
-			this.years_owned = years_owned;
-			this.no_of_owners = no_of_owners;
+			this.years_owned = yearsOwned;
+			this.no_of_owners = noOfOwners;
 		}
 
 
@@ -58,15 +58,15 @@ public class SuspectCar {
 
 
 
-		public String getCar_reg() {
+		public String getCarReg() {
 			return car_reg;
 		}
 
 
 
 
-		public void setCar_reg(String car_reg) {
-			this.car_reg = car_reg;
+		public void setCarReg(String carReg) {
+			this.car_reg = carReg;
 		}
 
 
@@ -114,29 +114,29 @@ public class SuspectCar {
 
 
 
-		public String getYears_owned() {
+		public String getYearsOwned() {
 			return years_owned;
 		}
 
 
 
 
-		public void setYears_owned(String years_owned) {
-			this.years_owned = years_owned;
+		public void setYears_owned(String yearsOwned) {
+			this.years_owned = yearsOwned;
 		}
 
 
 
 
-		public String getNo_of_owners() {
+		public String getNoOfOwners() {
 			return no_of_owners;
 		}
 
 
 
 
-		public void setNo_of_owners(String no_of_owners) {
-			this.no_of_owners = no_of_owners;
+		public void setNo_of_owners(String noOfOwners) {
+			this.no_of_owners = noOfOwners;
 		}
 		
 		

@@ -36,13 +36,13 @@ public class SuspectCarTests {
 		@Test
 		public void testGetterCarReg() {
 
-			Assert.assertEquals(account.getCar_reg(), "sample");
+			Assert.assertEquals(account.getCarReg(), "sample");
 		}
 
 		@Test
 		public void testSetterCarReg() {
-			account.setCar_reg("sample2");
-			Assert.assertEquals(account.getCar_reg(), "sample2");
+			account.setCarReg("sample2");
+			Assert.assertEquals(account.getCarReg(), "sample2");
 		}
 		
 		@Test
@@ -84,25 +84,25 @@ public class SuspectCarTests {
 		@Test
 		public void testGetteryears_owned() {
 
-			Assert.assertEquals(account.getYears_owned(), "sample");
+			Assert.assertEquals(account.getYearsOwned(), "sample");
 		}
 
 		@Test
 		public void testSetteryears_owned() {
 			account.setYears_owned("sample2");
-			Assert.assertEquals(account.getYears_owned(), "sample2");
+			Assert.assertEquals(account.getYearsOwned(), "sample2");
 		}
 		
 		@Test
 		public void testGetternoOfOwners() {
 
-			Assert.assertEquals(account.getNo_of_owners(), "sample");
+			Assert.assertEquals(account.getNoOfOwners(), "sample");
 		}
 
 		@Test
 		public void testSetternoOfOwners() {
 			account.setNo_of_owners("sample2");
-			Assert.assertEquals(account.getNo_of_owners(), "sample2");
+			Assert.assertEquals(account.getNoOfOwners(), "sample2");
 		}
 
 }
