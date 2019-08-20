@@ -23,6 +23,18 @@ public class SearchControllerTest {
 	SearchServiceImpl service;
 
 	@Test
+	public void testgetService() {
+		assertEquals(service, controller.getService());
+
+	}
+
+	@Test
+	public void testsetService() {
+		controller.setService(service);
+		assertEquals(service, controller.getService());
+	}
+	
+	@Test
 	public void getAUserTest() {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
