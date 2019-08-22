@@ -2,8 +2,6 @@ package com.bae.service;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -29,46 +27,46 @@ public class ServiceTests {
 		// TODO Auto-generated method stub
 		return super.toString() + TestConstants.FOUNDLIST;
 	}
-	
+
 	@Test
 	public void getNameTest() {
-		
+
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-					String name = "name";
+		String name = "name";
 		System.out.println(TestConstants.FOUNDLIST);
 		assertEquals(TestConstants.FOUNDLIST, service.getName(name));
 		Mockito.verify(repository).findAll();
 	}
-	
+
 	@Test
 	public void getCarregTest() {
-		
+
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-					String carreg = "car";
+		String carreg = "car";
 		System.out.println(TestConstants.FOUNDLIST);
-		assertEquals(TestConstants.FOUNDLIST, service.getCarReg(carreg));
+		assertEquals(TestConstants.FOUNDLIST, service.getSuspectCar(carreg));
 		Mockito.verify(repository).findAll();
 	}
-	
+
 	@Test
 	public void getLocationTest() {
-		
+
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-					String location = "loce";
+		String location = "loce";
 		System.out.println(TestConstants.FOUNDLIST);
 		assertEquals(TestConstants.FOUNDLIST, service.getLocation(location));
 		Mockito.verify(repository).findAll();
 	}
-	
+
 	@Test
 	public void getIDTest() {
-		
+
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-					String id = "ID";
+		String id = "ID";
 		System.out.println(TestConstants.FOUNDLIST);
 		assertEquals(TestConstants.FOUNDLIST, service.getId(id));
 		Mockito.verify(repository).findAll();

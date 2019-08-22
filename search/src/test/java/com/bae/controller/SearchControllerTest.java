@@ -33,42 +33,44 @@ public class SearchControllerTest {
 		controller.setService(service);
 		assertEquals(service, controller.getService());
 	}
-	
+
 	@Test
 	public void getAUserTest() {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-		
+
 		Mockito.when(service.getName(null)).thenReturn(TestConstants.MOCK_CITIZEN_ARRAY);
 		assertEquals(TestConstants.MOCK_CITIZEN_ARRAY, controller.getName(null));
 		Mockito.verify(service).getName(null);
 	}
+
 	@Test
 	public void getAcarTest() {
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-		
-		Mockito.when(service.getCarReg(null)).thenReturn(TestConstants.MOCK_CITIZEN_ARRAY);
+		TestConstants.MOCK_SUSPECT_CAR_ARRAY.add(TestConstants.MOCK_SUSPECT_CAR);
+		TestConstants.MOCK_SUSPECT_CAR_ARRAY.add(TestConstants.MOCK_SUSPECT_CAR2);
+
+		Mockito.when(service.getSuspectCar(null)).thenReturn(TestConstants.MOCK_SUSPECT_CAR_ARRAY);
 		assertEquals(TestConstants.MOCK_CITIZEN_ARRAY, controller.getCarReg(null));
-		Mockito.verify(service).getCarReg(null);
+		Mockito.verify(service).getSuspectCar(null);
 	}
+
 	@Test
 	public void getAlocationTest() {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-		
+
 		Mockito.when(service.getLocation(null)).thenReturn(TestConstants.MOCK_CITIZEN_ARRAY);
 		assertEquals(TestConstants.MOCK_CITIZEN_ARRAY, controller.getLocation(null));
 		Mockito.verify(service).getLocation(null);
 	}
+
 	@Test
 	public void getAnIdTest() {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-		
+
 		Mockito.when(service.getId(null)).thenReturn(TestConstants.MOCK_CITIZEN_ARRAY);
 		assertEquals(TestConstants.MOCK_CITIZEN_ARRAY, controller.getId(null));
 		Mockito.verify(service).getId(null);
 	}
 }
-
