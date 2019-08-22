@@ -1,13 +1,20 @@
 package com.bae.service;
 
-import org.springframework.http.ResponseEntity;
+import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+import com.bae.entity.Citizen;
+
+@Service
 public interface SearchService {
 
-		ResponseEntity<String> getName(String name);
+		List<Citizen> getName(String name);
 		
-		ResponseEntity<String> getLocation(String location);
+		List<Citizen> getLocation(String location);
 
-		ResponseEntity<String> getCarReg(String carreg);
+		List<Citizen> getCarReg(String carreg);
+		
+		List<Citizen> getId(String id);
 
 }
