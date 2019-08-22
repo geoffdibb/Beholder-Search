@@ -6,87 +6,84 @@ import org.junit.Test;
 
 import com.bae.entity.Citizen;
 
-import junit.framework.Assert;
-
 public class CitizenTests {
-		Citizen account = new Citizen("citizenid", "forename", "surname", 1, "homeaddress", "carplates");
+	Citizen account = new Citizen("citizenid", "forename", "surname", "1", "homeaddress", "carplates");
 
-		
-		@Test
-		public void testGetterCitizenId() {
+	@Test
+	public void testGetterCitizenId() {
 
-			assertEquals("citizenid",account.getCitizenId());
-		}
+		assertEquals("citizenid", account.getCitizenId());
+	}
 
-		@Test
-		public void testSetterCitizenId() {
-			account.setCitizenId("citizenid2");
-			assertEquals( "citizenid2",account.getCitizenId());
-			
-		}
-		
-		@Test
-		public void testGetterForeNames() {
+	@Test
+	public void testSetterCitizenId() {
+		account.setCitizenId("citizenid2");
+		assertEquals("citizenid2", account.getCitizenId());
 
-			assertEquals( "forename",account.getForenames());
-		}
+	}
 
-		@Test
-		public void testSetterForeNames() {
-			account.setForenames("forename2");
-			assertEquals("forename2" ,account.getForenames());
-			
-		}
-		
-		@Test
-		public void testGetterSurname() {
+	@Test
+	public void testGetterForeNames() {
 
-			assertEquals( "surname", account.getSurname());
-		}
+		assertEquals("forename", account.getForenames());
+	}
 
-		@Test
-		public void testSetterSurname() {
-			account.setSurname("surname2");
-			assertEquals( "surname2",account.getSurname());
-			
-		}
-		
-		@Test
-		public void testGetterDateOfBirth() {
+	@Test
+	public void testSetterForeNames() {
+		account.setForenames("forename2");
+		assertEquals("forename2", account.getForenames());
 
-			assertEquals(1,account.getDateOfBirth());
-		}
+	}
 
-		@Test
-		public void testSetterDateOfBirth() {
-			account.setDateOfBirth(2);
-			assertEquals(2, account.getDateOfBirth());
-			
-		}
-		
-		@Test
-		public void testGetterHomeAddress() {
+	@Test
+	public void testGetterSurname() {
 
-			assertEquals( "homeaddress", account.getHomeAddress());
-		}
+		assertEquals("surname", account.getSurname());
+	}
 
-		@Test
-		public void testSetterHomeAddress() {
-			account.setHomeAddress("homeaddress2");
-			assertEquals("homeaddress2", account.getHomeAddress());
-			
-		}
-		
-		@Test
-		public void testGetterVehicleRegistrationNumber() {
+	@Test
+	public void testSetterSurname() {
+		account.setSurname("surname2");
+		assertEquals("surname2", account.getSurname());
 
-			assertEquals( "carplates", account.getVehicleRegistrationNumber());
-		}
+	}
 
-		@Test
-		public void testSetterVehicleRegistrationNumber() {
-			account.setVehicleRegistrationNumber("carplates2");
-			assertEquals("carplates2", account.getVehicleRegistrationNumber());
-			
-		}
+	@Test
+	public void testGetterDateOfBirth() {
+
+		assertEquals(1, account.getDateOfBirth());
+	}
+
+	@Test
+	public void testSetterDateOfBirth() {
+		account.setDateOfBirth("2");
+		assertEquals("2", account.getDateOfBirth());
+
+	}
+
+	@Test
+	public void testGetterHomeAddress() {
+
+		assertEquals("homeaddress", account.getHomeAddress());
+	}
+
+	@Test
+	public void testSetterHomeAddress() {
+		account.setHomeAddress("homeaddress2");
+		assertEquals("homeaddress2", account.getHomeAddress());
+
+	}
+
+	@Test
+	public void testGetterVehicleRegistrationNumber() {
+
+		assertEquals("carplates", account.getVehicleRegistrationNumber());
+	}
+
+	@Test
+	public void testSetterVehicleRegistrationNumber() {
+		account.setVehicleRegistrationNumber("carplates2");
+		assertEquals("carplates2", account.getVehicleRegistrationNumber());
+
+	}
 }
