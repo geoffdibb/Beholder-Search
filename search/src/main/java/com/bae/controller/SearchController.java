@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bae.entity.Citizen;
+import com.bae.entity.SuspectCar;
 import com.bae.service.SearchService;
 
 @RestController
@@ -40,8 +41,8 @@ public class SearchController {
 	}
 
 	@GetMapping("${path.carreg}")
-	public List<Citizen> getCarReg(@PathVariable("carreg") String carreg) {
-		return service.getCarReg(carreg);
+	public List<SuspectCar> getCarReg(@PathVariable("carReg") String carreg) {
+		return service.getSuspectCar(carreg);
 	}
 
 	@GetMapping("${path.profileId}")
