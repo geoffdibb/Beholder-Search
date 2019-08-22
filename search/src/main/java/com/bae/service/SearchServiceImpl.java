@@ -1,7 +1,5 @@
 package com.bae.service;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,64 +11,62 @@ import com.bae.repository.CitizenRepository;
 
 @Service
 public class SearchServiceImpl implements SearchService {
-	
 
-	@Autowired 
+	@Autowired
 	private CitizenRepository repository;
 
-	
 	@Override
 	public List<Citizen> getName(String name) {
 		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
-		for (int i = 0; i<list.size(); i++) {
-			if (name.contentEquals( list.get(i).getForenames())) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getForenames().toLowerCase().contains(name.toLowerCase())) {
 				foundList.add(list.get(i));
-				}  
+			} else if (name.equalsIgnoreCase(list.get(i).getSurname())) {
+				foundList.add(list.get(i));
+			}
 		}
 		return foundList;
-		}
+	}
 
 	@Override
 	public List<Citizen> getLocation(String location) {
 		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
-		for (int i = 0; i<list.size(); i++) {
-			if (location.equals( list.get(i).getHomeAddress())) {
+		for (int i = 0; i < list.size(); i++) {
+			if (location.equals(list.get(i).getHomeAddress())) {
 				foundList.add(list.get(i));
-				}
-			
+			}
+
 		}
-		
+
 		return foundList;
-		}
-	
+	}
 
 	@Override
 	public List<Citizen> getCarReg(String carreg) {
 		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
-		for (int i = 0; i<list.size(); i++) {
-			if (carreg.equals( list.get(i).getVehicleRegistrationNumber())) {
+		for (int i = 0; i < list.size(); i++) {
+			if (carreg.equals(list.get(i).getVehicleRegistrationNumber())) {
 				foundList.add(list.get(i));
-				}
+			}
 		}
-			return foundList;
+		return foundList;
 
-		}
+	}
+
 	@Override
 	public List<Citizen> getId(String id) {
 		List<Citizen> foundList = new ArrayList<>();
 		List<Citizen> list = repository.findAll();
-		for (int i = 0; i<list.size(); i++) {
-			if (id.contentEquals( list.get(i).getCitizenId())){
+		for (int i = 0; i < list.size(); i++) {
+			if (id.contentEquals(list.get(i).getCitizenId())) {
 				foundList.add(list.get(i));
-				}
+			}
 		}
-			return foundList;
+		return foundList;
 
-		}
+	}
 
 }
-
-

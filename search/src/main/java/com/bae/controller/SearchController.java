@@ -12,7 +12,7 @@ import com.bae.entity.Citizen;
 import com.bae.service.SearchService;
 
 @RestController
-@RequestMapping("${path.requestLogs}")
+@RequestMapping("${path.search}")
 public class SearchController {
 	private SearchService service;
 
@@ -29,22 +29,22 @@ public class SearchController {
 		this.service = service;
 	}
 
-	@GetMapping("${path.getCitizenNameLogs}")
+	@GetMapping("${path.name}")
 	public List<Citizen> getName(@PathVariable("name") String name) {
 		return service.getName(name);
 	}
 
-	@GetMapping("${path.getCitizenLogs}")
+	@GetMapping("${path.location}")
 	public List<Citizen> getLocation(@PathVariable("location") String location) {
 		return service.getLocation(location);
 	}
 
-	@GetMapping("${path.getCitizenCarRegLogs}")
+	@GetMapping("${path.carreg}")
 	public List<Citizen> getCarReg(@PathVariable("carreg") String carreg) {
 		return service.getCarReg(carreg);
 	}
-	
-	@GetMapping("${path.getIDLogs}")
+
+	@GetMapping("${path.profileId}")
 	public List<Citizen> getId(@PathVariable("id") String id) {
 		return service.getId(id);
 	}
