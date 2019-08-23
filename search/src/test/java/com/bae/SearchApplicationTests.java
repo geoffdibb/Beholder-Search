@@ -12,4 +12,5 @@ public class SearchApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
+
 }
