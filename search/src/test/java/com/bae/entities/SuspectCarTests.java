@@ -65,17 +65,6 @@ public class SuspectCarTests {
 	}
 
 	@Test
-	public void testGetyears_owned() {
-		assertEquals("yearsOwned", TestConstants.MOCK_CAR_OBJECT.getYearsOwned());
-	}
-
-	@Test
-	public void testSetYears_owned() {
-		TestConstants.MOCK_CAR_OBJECT2.setYearsOwned("yearsowned2");
-		assertEquals("yearsowned2", TestConstants.MOCK_CAR_OBJECT2.getYearsOwned());
-	}
-
-	@Test
 	public void testGetnoOfOwners() {
 		assertEquals("surname", TestConstants.MOCK_CAR_OBJECT.getSurname());
 	}

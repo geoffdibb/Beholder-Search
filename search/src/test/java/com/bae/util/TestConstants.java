@@ -15,8 +15,8 @@ public class TestConstants {
 	public static final Citizen MOCK_CITIZEN_OBJECT= new Citizen("id", "name", "surname", "0", "homeAddress", "car_reg", "age", "gender", "phoneNumber");
 	public static final Citizen MOCK_CITIZEN_OBJECT2 = new Citizen("id", "name", "surname", "0", "homeAddress", "car_reg", "age", "gender", "phoneNumber");
 	
-	public static final SuspectCar MOCK_CAR_OBJECT = new SuspectCar("id", "name", "surname", "carReg", "make", "model", "colour", "yearsOwned");
-	public static final SuspectCar MOCK_CAR_OBJECT2 = new SuspectCar("id", "name", "surname", "carReg", "make", "model", "colour", "yearsOwned");
+	public static final SuspectCar MOCK_CAR_OBJECT = new SuspectCar("id", "name", "surname", "carReg", "make", "model", "colour");
+	public static final SuspectCar MOCK_CAR_OBJECT2 = new SuspectCar("id", "name", "surname", "carReg", "make", "model", "colour");
 	
 	public static final Incident MOCK_INCIDENT_OBJECT = new Incident("id", "citizen", "timeStamp", "streetName", "longitude", "latitude", "type", "detail");
 	public static final Incident MOCK_INCIDENT_OBJECT2 = new Incident("id", "citizen", "timeStamp", "streetName", "longitude", "latitude", "type", "detail");

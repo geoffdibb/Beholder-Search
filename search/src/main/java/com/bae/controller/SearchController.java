@@ -29,7 +29,7 @@ public class SearchController {
 	}
 
 	@GetMapping("${path.searchCategory}")
-	public List<Object> getName(@PathVariable("category") String category,
+	public List<Object> search(@PathVariable("category") String category,
 			@PathVariable("searchTerm") String searchTerm) {
 		return service.search(category, searchTerm);
 	}
