@@ -3,16 +3,21 @@ package com.bae.entity;
 public class Associate {
 
 	private String forenames;
-	private int phoneCalls;
-	private String latest_Call;
+	private String surname;
+	private String phonecalls;
+	private String latest_call;
 	private String citizenId;
+	private String associateId;
 
-	public Associate(String name, int numberOfPhoneCalls, String latestPhoneCall, String citizenId) {
+	public Associate(String forenames, String surname, String phonecalls, String latestPhoneCall, String citizenId,
+			String associateId) {
 		super();
-		this.forenames = name;
-		this.phoneCalls = numberOfPhoneCalls;
-		this.latest_Call = latestPhoneCall;
+		this.forenames = forenames;
+		this.surname = surname;
+		this.phonecalls = phonecalls;
+		this.latest_call = latestPhoneCall;
 		this.citizenId = citizenId;
+		this.associateId = associateId;
 	}
 
 	public Associate() {
@@ -31,24 +36,40 @@ public class Associate {
 		return forenames;
 	}
 
-	public void setName(String name) {
-		this.forenames = name;
+	public void setName(String forenames) {
+		this.forenames = forenames;
 	}
 
-	public int getNumberOfPhoneCalls() {
-		return phoneCalls;
+	public String getSurname() {
+		return surname;
 	}
 
-	public void setNumberOfPhoneCalls(int numberOfPhoneCalls) {
-		this.phoneCalls = numberOfPhoneCalls;
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public String getNumberOfPhoneCalls() {
+		return phonecalls;
+	}
+
+	public void setNumberOfPhoneCalls(String phoneCalls) {
+		this.phonecalls = phoneCalls;
 	}
 
 	public String getLatestPhoneCall() {
-		return latest_Call;
+		return latest_call;
 	}
 
 	public void setLatestPhoneCall(String latestPhoneCall) {
-		this.latest_Call = latestPhoneCall;
+		this.latest_call = latestPhoneCall;
+	}
+
+	public String getAssociateId() {
+		return associateId;
+	}
+
+	public void setAssociateId(String associateId) {
+		this.associateId = associateId;
 	}
 
 }

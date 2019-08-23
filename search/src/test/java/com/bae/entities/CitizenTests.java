@@ -7,7 +7,8 @@ import org.junit.Test;
 import com.bae.entity.Citizen;
 
 public class CitizenTests {
-	Citizen account = new Citizen("citizenid", "forename", "surname", "1", "homeaddress", "carplates");
+	Citizen account = new Citizen("citizenid", "forename", "surname", "1", "homeaddress", "carplates", "age", "gender",
+			"phonenumber");
 
 	@Test
 	public void testGetterCitizenId() {
@@ -75,15 +76,54 @@ public class CitizenTests {
 	}
 
 	@Test
-	public void testGetterVehicleRegistrationNumber() {
+	public void testGetterCarReg() {
 
-		assertEquals("carplates", account.getVehicleRegistrationNumber());
+		assertEquals("carplates", account.getCarReg());
 	}
 
 	@Test
-	public void testSetterVehicleRegistrationNumber() {
-		account.setVehicleRegistrationNumber("carplates2");
-		assertEquals("carplates2", account.getVehicleRegistrationNumber());
+	public void testSetterCarReg() {
+		account.setCarReg("carplates2");
+		assertEquals("carplates2", account.getCarReg());
+
+	}
+
+	@Test
+	public void testGetterAge() {
+
+		assertEquals("age", account.getAge());
+	}
+
+	@Test
+	public void testSetterAge() {
+		account.setAge("age2");
+		assertEquals("age2", account.getAge());
+
+	}
+
+	@Test
+	public void testGetterPhoneNumber() {
+
+		assertEquals("phonenumber", account.getPhoneNumber());
+	}
+
+	@Test
+	public void testSetterPhoneNumber() {
+		account.setPhoneNumber("phonenumber2");
+		assertEquals("phonenumber2", account.getPhoneNumber());
+
+	}
+
+	@Test
+	public void testGetterGender() {
+
+		assertEquals("gender", account.getGender());
+	}
+
+	@Test
+	public void testSetterGender() {
+		account.setGender("gender2");
+		assertEquals("gender2", account.getGender());
 
 	}
 }

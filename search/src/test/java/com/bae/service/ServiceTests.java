@@ -34,7 +34,6 @@ public class ServiceTests {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
 		String name = "name";
-		System.out.println(TestConstants.FOUNDLIST);
 		assertEquals(TestConstants.FOUNDLIST, service.getName(name));
 		Mockito.verify(repository).findAll();
 	}
@@ -45,7 +44,6 @@ public class ServiceTests {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
 		String carreg = "car";
-		System.out.println(TestConstants.FOUNDLIST);
 		assertEquals(TestConstants.FOUNDLIST, service.getSuspectCar(carreg));
 		Mockito.verify(repository).findAll();
 	}
@@ -56,7 +54,6 @@ public class ServiceTests {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
 		String location = "loce";
-		System.out.println(TestConstants.FOUNDLIST);
 		assertEquals(TestConstants.FOUNDLIST, service.getLocation(location));
 		Mockito.verify(repository).findAll();
 	}
@@ -67,7 +64,6 @@ public class ServiceTests {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
 		String id = "ID";
-		System.out.println(TestConstants.FOUNDLIST);
 		assertEquals(TestConstants.FOUNDLIST, service.getId(id));
 		Mockito.verify(repository).findAll();
 	}

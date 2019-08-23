@@ -69,7 +69,7 @@ public class SearchControllerTest {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
 
-		Mockito.when(service.getId(null)).thenReturn(TestConstants.MOCK_CITIZEN_ARRAY);
+		Mockito.when(service.getId(null)).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
 		assertEquals(TestConstants.MOCK_CITIZEN_ARRAY, controller.getId(null));
 		Mockito.verify(service).getId(null);
 	}
