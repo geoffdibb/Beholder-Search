@@ -31,23 +31,37 @@ public class SearchServiceImpl implements SearchService {
 	public SearchServiceImpl() {
 	}
 
+	public List<Object> search(String category, String searchTerm) {
+		switch (category.toLowerCase()) {
+		case "name":
+			return getName(searchTerm);
+		case "car reg":
+			return getSuspectCar(searchTerm);
+		case "getassociates":
+			return getId(searchTerm);
+		default:
+			return null;
+		}
+
+	}
+
 	@Override
-	public List<Citizen> getName(String name) {
-		List<Citizen> foundList = new ArrayList<>();
+	public List<Object> getName(String name) {
+		List<Object> foundList = new ArrayList<>();
 		List<Citizen> list = citizenRepo.findAll();
 		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getForenames().toLowerCase().contains(name.toLowerCase())) {
-				foundList.add(list.get(i));
-			} else if (name.equalsIgnoreCase(list.get(i).getSurname())) {
+			String dbName = (list.get(i).getForenames().toLowerCase() + " " + list.get(i).getSurname().toLowerCase());
+			if (dbName.contains(name.toLowerCase())) {
 				foundList.add(list.get(i));
 			}
+
 		}
 		return foundList;
 	}
 
 	@Override
-	public List<Citizen> getLocation(String location) {
-		List<Citizen> foundList = new ArrayList<>();
+	public List<Object> getLocation(String location) {
+		List<Object> foundList = new ArrayList<>();
 		List<Citizen> list = citizenRepo.findAll();
 		for (int i = 0; i < list.size(); i++) {
 			if (location.equals(list.get(i).getHomeAddress())) {
@@ -60,8 +74,8 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
-	public List<SuspectCar> getSuspectCar(String carreg) {
-		List<SuspectCar> foundList = new ArrayList<>();
+	public List<Object> getSuspectCar(String carreg) {
+		List<Object> foundList = new ArrayList<>();
 		List<SuspectCar> list = suspectRepo.findAll();
 		for (int i = 0; i < list.size(); i++) {
 			if (carreg.equals(list.get(i).getCarReg())) {
@@ -76,11 +90,7 @@ public class SearchServiceImpl implements SearchService {
 	public List<Object> getId(String id) {
 		List<Object> foundList = new ArrayList<>();
 		List<Associate> foundAssociates = associateRepo.findAll();
-		List<Citizen> list = citizenRepo.findAll();
-		for (int i = 0; i < list.size(); i++) {
-			if (id.contentEquals(list.get(i).getCitizenId())) {
-				foundList.add(list.get(i));
-			}
+		for (int i = 0; i < foundAssociates.size(); i++) {
 			if (id.contentEquals(foundAssociates.get(i).getCitizenId())) {
 				foundList.add(foundAssociates.get(i));
 			}
