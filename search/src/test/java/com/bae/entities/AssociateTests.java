@@ -24,20 +24,18 @@ public class AssociateTests {
 
 	@Test
 	public void testGetSurname() {
-		assertEquals("surname", TestConstants.MOCK_ASSOCIATE_OBJECT.getName());
+		assertEquals("surname", TestConstants.MOCK_ASSOCIATE_OBJECT.getSurname());
 	}
 
 	@Test
 	public void testSetSurname() {
-		TestConstants.MOCK_ASSOCIATE_OBJECT2.setName("surname2");
-		assertEquals("surname2", TestConstants.MOCK_ASSOCIATE_OBJECT2.getName());
-
+		TestConstants.MOCK_ASSOCIATE_OBJECT2.setSurname("surname2");
+		assertEquals("surname2", TestConstants.MOCK_ASSOCIATE_OBJECT2.getSurname());
 	}
 
 	@Test
 	public void testGetNoOfPhoneCalls() {
-
-		assertEquals("1", TestConstants.MOCK_ASSOCIATE_OBJECT.getNumberOfPhoneCalls());
+		assertEquals("phonecalls", TestConstants.MOCK_ASSOCIATE_OBJECT.getNumberOfPhoneCalls());
 	}
 
 	@Test
@@ -49,19 +47,19 @@ public class AssociateTests {
 	@Test
 	public void testGetLatestPhoneCall() {
 
-		assertEquals("nophone", TestConstants.MOCK_ASSOCIATE_OBJECT.getLatestPhoneCall());
+		assertEquals("latestPhoneCall", TestConstants.MOCK_ASSOCIATE_OBJECT.getLatestPhoneCall());
 	}
 
 	@Test
 	public void testSetLatestPhoneCall() {
-		TestConstants.MOCK_ASSOCIATE_OBJECT2.setLatestPhoneCall("nophone2");
-		assertEquals("nophone2", TestConstants.MOCK_ASSOCIATE_OBJECT2.getLatestPhoneCall());
+		TestConstants.MOCK_ASSOCIATE_OBJECT2.setLatestPhoneCall("latestPhoneCall2");
+		assertEquals("latestPhoneCall2", TestConstants.MOCK_ASSOCIATE_OBJECT2.getLatestPhoneCall());
 	}
 
 	@Test
 	public void testGetCitizenId() {
 
-		assertEquals("citizenId", TestConstants.MOCK_ASSOCIATE_OBJECT.getCitizenId());
+		assertEquals("id", TestConstants.MOCK_ASSOCIATE_OBJECT.getCitizenId());
 	}
 
 	@Test

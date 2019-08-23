@@ -46,8 +46,8 @@ public class SearchControllerTest {
 
 	@Test
 	public void getAcarTest() {
-		TestConstants.MOCK_SUSPECT_CAR_ARRAY.add(TestConstants.MOCK_SUSPECT_CAR);
-		TestConstants.MOCK_SUSPECT_CAR_ARRAY.add(TestConstants.MOCK_SUSPECT_CAR2);
+		TestConstants.MOCK_SUSPECT_CAR_ARRAY.add(TestConstants.MOCK_CAR_OBJECT);
+		TestConstants.MOCK_SUSPECT_CAR_ARRAY.add(TestConstants.MOCK_CAR_OBJECT2);
 
 		Mockito.when(service.getSuspectCar(null)).thenReturn(TestConstants.MOCK_SUSPECT_CAR_ARRAY);
 		assertEquals(TestConstants.MOCK_CITIZEN_ARRAY, controller.getCarReg(null));

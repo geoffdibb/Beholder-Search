@@ -5,105 +5,85 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.bae.entity.SuspectCar;
+import com.bae.util.TestConstants;
 
 public class SuspectCarTests {
-	SuspectCar account = new SuspectCar("citizenid", "owner", "carreg", "make", "model", "colour", "yearsowned",
-			"noofowners");
 
 	@Test
-	public void testGetterCitizenId() {
-
-		assertEquals("citizenid", account.getCitizenID());
+	public void testGetCitizenId() {
+		assertEquals("id", TestConstants.MOCK_CAR_OBJECT.getCitizenID());
 	}
 
 	@Test
-	public void testSetterCitizenId() {
-		account.setCitizenID("citizenid2");
-		assertEquals("citizenid2", account.getCitizenID());
+	public void testSetCitizenId() {
+		TestConstants.MOCK_CAR_OBJECT2.setCitizenID("citizenid2");
+		assertEquals("citizenid2", TestConstants.MOCK_CAR_OBJECT2.getCitizenID());
 	}
 
 	@Test
-	public void testGetterOwner() {
-
-		assertEquals("owner", account.getForenames());
+	public void testGetCarReg() {
+		assertEquals("carReg", TestConstants.MOCK_CAR_OBJECT.getCarReg());
 	}
 
 	@Test
-	public void testSetterOwner() {
-		account.setForenames("owner2");
-		assertEquals("owner2", account.getForenames());
+	public void testSetCarReg() {
+		TestConstants.MOCK_CAR_OBJECT2.setCarReg("carreg2");
+		assertEquals("carreg2", TestConstants.MOCK_CAR_OBJECT2.getCarReg());
 	}
 
 	@Test
-	public void testGetterCarReg() {
-
-		assertEquals("carreg", account.getCarReg());
+	public void testGetMake() {
+		assertEquals("make", TestConstants.MOCK_CAR_OBJECT.getMake());
 	}
 
 	@Test
-	public void testSetterCarReg() {
-		account.setCarReg("carreg2");
-		assertEquals("carreg2", account.getCarReg());
+	public void testSetMake() {
+		TestConstants.MOCK_CAR_OBJECT2.setMake("make2");
+		assertEquals("make2", TestConstants.MOCK_CAR_OBJECT2.getMake());
 	}
 
 	@Test
-	public void testGetterMake() {
-
-		assertEquals("make", account.getMake());
+	public void testGetModel() {
+		assertEquals("model", TestConstants.MOCK_CAR_OBJECT.getModel());
 	}
 
 	@Test
-	public void testSetterMake() {
-		account.setMake("make2");
-		assertEquals("make2", account.getMake());
+	public void testSetModel() {
+		TestConstants.MOCK_CAR_OBJECT2.setModel("model2");
+		assertEquals("model2", TestConstants.MOCK_CAR_OBJECT2.getModel());
 	}
 
 	@Test
-	public void testGetterModel() {
-
-		assertEquals("model", account.getModel());
+	public void testGetColour() {
+		assertEquals("colour", TestConstants.MOCK_CAR_OBJECT.getColour());
 	}
 
 	@Test
-	public void testSetterModel() {
-		account.setModel("model2");
-		assertEquals("model2", account.getModel());
+	public void testSetColourl() {
+		TestConstants.MOCK_CAR_OBJECT2.setColour("colour2");
+		assertEquals("colour2", TestConstants.MOCK_CAR_OBJECT2.getColour());
 	}
 
 	@Test
-	public void testGetterColour() {
-
-		assertEquals("colour", account.getColour());
+	public void testGetyears_owned() {
+		assertEquals("yearsOwned", TestConstants.MOCK_CAR_OBJECT.getYearsOwned());
 	}
 
 	@Test
-	public void testSetterColourl() {
-		account.setColour("colour2");
-		assertEquals("colour2", account.getColour());
+	public void testSetYears_owned() {
+		TestConstants.MOCK_CAR_OBJECT2.setYearsOwned("yearsowned2");
+		assertEquals("yearsowned2", TestConstants.MOCK_CAR_OBJECT2.getYearsOwned());
 	}
 
 	@Test
-	public void testGetteryears_owned() {
-
-		assertEquals("yearsowned", account.getYearsOwned());
+	public void testGetnoOfOwners() {
+		assertEquals("surname", TestConstants.MOCK_CAR_OBJECT.getSurname());
 	}
 
 	@Test
-	public void testSetteryears_owned() {
-		account.setYearsOwned("yearsowned2");
-		assertEquals("yearsowned2", account.getYearsOwned());
-	}
-
-	@Test
-	public void testGetternoOfOwners() {
-
-		assertEquals("surname", account.getSurname());
-	}
-
-	@Test
-	public void testSetternoOfOwners() {
-		account.setSurname("surname2");
-		assertEquals("surname2", account.getSurname());
+	public void testSetnoOfOwners() {
+		TestConstants.MOCK_CAR_OBJECT2.setSurname("surname2");
+		assertEquals("surname2", TestConstants.MOCK_CAR_OBJECT2.getSurname());
 	}
 
 }
