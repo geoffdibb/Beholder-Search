@@ -24,15 +24,14 @@ public class ServiceTests {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return super.toString() + TestConstants.FOUNDLIST;
 	}
 
 	@Test
 	public void getNameTest() {
 
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String name = "name";
 		assertEquals(TestConstants.FOUNDLIST, service.getName(name));
 		Mockito.verify(repository).findAll();
@@ -41,8 +40,8 @@ public class ServiceTests {
 	@Test
 	public void getCarregTest() {
 
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String carreg = "car";
 		assertEquals(TestConstants.FOUNDLIST, service.getSuspectCar(carreg));
 		Mockito.verify(repository).findAll();
@@ -51,8 +50,8 @@ public class ServiceTests {
 	@Test
 	public void getLocationTest() {
 
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String location = "loce";
 		assertEquals(TestConstants.FOUNDLIST, service.getLocation(location));
 		Mockito.verify(repository).findAll();
@@ -61,8 +60,8 @@ public class ServiceTests {
 	@Test
 	public void getIDTest() {
 
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String id = "ID";
 		assertEquals(TestConstants.FOUNDLIST, service.getId(id));
 		Mockito.verify(repository).findAll();
