@@ -5,81 +5,80 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.bae.entity.Associate;
+import com.bae.util.TestConstants;
 
 public class AssociateTests {
-	Associate account = new Associate("name", "1", "nophone", "citizenId", "surname", "associateId");
-
+	
 	@Test
-	public void testGetterName() {
+	public void testGetName() {
 
-		assertEquals("name", account.getName());
+		assertEquals("name", TestConstants.MOCK_ASSOCIATE_OBJECT.getName());
 	}
 
 	@Test
-	public void testSetterName() {
-		account.setName("name2");
-		assertEquals("name2", account.getName());
-
-	}
-
-	@Test
-	public void testGetterSurname() {
-
-		assertEquals("surname", account.getName());
-	}
-
-	@Test
-	public void testSetterSurname() {
-		account.setName("surname2");
-		assertEquals("surname2", account.getName());
+	public void testSetName() {
+		TestConstants.MOCK_ASSOCIATE_OBJECT2.setName("name2");
+		assertEquals("name2", TestConstants.MOCK_ASSOCIATE_OBJECT2.getName());
 
 	}
 
 	@Test
-	public void testGetterNoOfPhoneCalls() {
-
-		assertEquals("1", account.getNumberOfPhoneCalls());
+	public void testGetSurname() {
+		assertEquals("surname", TestConstants.MOCK_ASSOCIATE_OBJECT.getName());
 	}
 
 	@Test
-	public void testSetterNoOfPhoneCalls() {
-		account.setNumberOfPhoneCalls("2");
-		assertEquals("2", account.getNumberOfPhoneCalls());
+	public void testSetSurname() {
+		TestConstants.MOCK_ASSOCIATE_OBJECT2.setName("surname2");
+		assertEquals("surname2", TestConstants.MOCK_ASSOCIATE_OBJECT2.getName());
+
 	}
 
 	@Test
-	public void testGetterLatestPhoneCall() {
+	public void testGetNoOfPhoneCalls() {
 
-		assertEquals("nophone", account.getLatestPhoneCall());
+		assertEquals("1", TestConstants.MOCK_ASSOCIATE_OBJECT.getNumberOfPhoneCalls());
 	}
 
 	@Test
-	public void testSetterLatestPhoneCall() {
-		account.setLatestPhoneCall("nophone2");
-		assertEquals("nophone2", account.getLatestPhoneCall());
+	public void testSetNoOfPhoneCalls() {
+		TestConstants.MOCK_ASSOCIATE_OBJECT2.setNumberOfPhoneCalls("2");
+		assertEquals("2", TestConstants.MOCK_ASSOCIATE_OBJECT2.getNumberOfPhoneCalls());
 	}
 
 	@Test
-	public void testGetterCitizenId() {
+	public void testGetLatestPhoneCall() {
 
-		assertEquals("citizenId", account.getCitizenId());
+		assertEquals("nophone", TestConstants.MOCK_ASSOCIATE_OBJECT.getLatestPhoneCall());
 	}
 
 	@Test
-	public void testSetterCitizenId() {
-		account.setCitizenId("citizenId2");
-		assertEquals("citizenId2", account.getCitizenId());
+	public void testSetLatestPhoneCall() {
+		TestConstants.MOCK_ASSOCIATE_OBJECT2.setLatestPhoneCall("nophone2");
+		assertEquals("nophone2", TestConstants.MOCK_ASSOCIATE_OBJECT2.getLatestPhoneCall());
 	}
 
 	@Test
-	public void testGetterAssociateId() {
+	public void testGetCitizenId() {
 
-		assertEquals("associateId", account.getAssociateId());
+		assertEquals("citizenId", TestConstants.MOCK_ASSOCIATE_OBJECT.getCitizenId());
 	}
 
 	@Test
-	public void testSetterAssociateId() {
-		account.setAssociateId("associateId2");
-		assertEquals("associateId2", account.getAssociateId());
+	public void testSetCitizenId() {
+		TestConstants.MOCK_ASSOCIATE_OBJECT2.setCitizenId("citizenId2");
+		assertEquals("citizenId2", TestConstants.MOCK_ASSOCIATE_OBJECT2.getCitizenId());
+	}
+
+	@Test
+	public void testGetAssociateId() {
+
+		assertEquals("associateId", TestConstants.MOCK_ASSOCIATE_OBJECT.getAssociateId());
+	}
+
+	@Test
+	public void testSetAssociateId() {
+		TestConstants.MOCK_ASSOCIATE_OBJECT2.setAssociateId("associateId2");
+		assertEquals("associateId2", TestConstants.MOCK_ASSOCIATE_OBJECT2.getAssociateId());
 	}
 }
