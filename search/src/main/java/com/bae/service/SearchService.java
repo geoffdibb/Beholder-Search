@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public interface SearchService {
 
+	List<Object> search(String category, String searchTerm);
+
 	List<Object> getName(String name);
 
 	List<Object> getLocation(String location);

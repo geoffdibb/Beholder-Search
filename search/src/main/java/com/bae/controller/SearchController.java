@@ -28,23 +28,10 @@ public class SearchController {
 		this.service = service;
 	}
 
-	@GetMapping("${path.name}")
-	public List<Object> getName(@PathVariable("name") String name) {
-		return service.getName(name);
+	@GetMapping("${path.searchCategory}")
+	public List<Object> getName(@PathVariable("category") String category,
+			@PathVariable("searchTerm") String searchTerm) {
+		return service.search(category, searchTerm);
 	}
 
-	@GetMapping("${path.location}")
-	public List<Object> getLocation(@PathVariable("location") String location) {
-		return service.getLocation(location);
-	}
-
-	@GetMapping("${path.carreg}")
-	public List<Object> getCarReg(@PathVariable("carReg") String carreg) {
-		return service.getSuspectCar(carreg);
-	}
-
-	@GetMapping("${path.profileId}")
-	public List<Object> getId(@PathVariable("id") String id) {
-		return service.getId(id);
-	}
 }
