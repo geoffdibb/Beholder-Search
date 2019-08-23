@@ -31,9 +31,23 @@ public class SearchServiceImpl implements SearchService {
 	public SearchServiceImpl() {
 	}
 
+	public List<Object> search(String category, String searchTerm) {
+		switch (category) {
+		case "name":
+			return getName(searchTerm);
+		case "car Reg":
+			return getSuspectCar(searchTerm);
+		case "getAssociates":
+			return getId(searchTerm);
+		default:
+			return null;
+		}
+
+	}
+
 	@Override
-	public List<Citizen> getName(String name) {
-		List<Citizen> foundList = new ArrayList<>();
+	public List<Object> getName(String name) {
+		List<Object> foundList = new ArrayList<>();
 		List<Citizen> list = citizenRepo.findAll();
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getForenames().toLowerCase().contains(name.toLowerCase())) {
@@ -46,8 +60,8 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
-	public List<Citizen> getLocation(String location) {
-		List<Citizen> foundList = new ArrayList<>();
+	public List<Object> getLocation(String location) {
+		List<Object> foundList = new ArrayList<>();
 		List<Citizen> list = citizenRepo.findAll();
 		for (int i = 0; i < list.size(); i++) {
 			if (location.equals(list.get(i).getHomeAddress())) {
@@ -60,8 +74,8 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
-	public List<SuspectCar> getSuspectCar(String carreg) {
-		List<SuspectCar> foundList = new ArrayList<>();
+	public List<Object> getSuspectCar(String carreg) {
+		List<Object> foundList = new ArrayList<>();
 		List<SuspectCar> list = suspectRepo.findAll();
 		for (int i = 0; i < list.size(); i++) {
 			if (carreg.equals(list.get(i).getCarReg())) {

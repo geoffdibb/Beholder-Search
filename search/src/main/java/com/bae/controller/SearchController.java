@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bae.entity.Citizen;
-import com.bae.entity.SuspectCar;
 import com.bae.service.SearchService;
 
 @RestController
@@ -31,17 +29,17 @@ public class SearchController {
 	}
 
 	@GetMapping("${path.name}")
-	public List<Citizen> getName(@PathVariable("name") String name) {
+	public List<Object> getName(@PathVariable("name") String name) {
 		return service.getName(name);
 	}
 
 	@GetMapping("${path.location}")
-	public List<Citizen> getLocation(@PathVariable("location") String location) {
+	public List<Object> getLocation(@PathVariable("location") String location) {
 		return service.getLocation(location);
 	}
 
 	@GetMapping("${path.carreg}")
-	public List<SuspectCar> getCarReg(@PathVariable("carReg") String carreg) {
+	public List<Object> getCarReg(@PathVariable("carReg") String carreg) {
 		return service.getSuspectCar(carreg);
 	}
 
