@@ -85,5 +85,16 @@ public class SuspectCarTests {
 		TestConstants.MOCK_CAR_OBJECT2.setSurname("surname2");
 		assertEquals("surname2", TestConstants.MOCK_CAR_OBJECT2.getSurname());
 	}
+	
+	@Test
+	public void testGetForename() {
+		assertEquals("name", TestConstants.MOCK_CAR_OBJECT.getForenames());
+	}
+	
+	@Test
+	public void testSetForenames() {
+		TestConstants.MOCK_CAR_OBJECT2.setSurname("surname2");
+		assertEquals("surname2", TestConstants.MOCK_CAR_OBJECT2.getSurname());
+	}
 
 }
