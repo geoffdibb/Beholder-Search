@@ -16,6 +16,6 @@ public interface SearchService {
 
 	List<SuspectCar> getSuspectCar(String carreg);
 
-	List<Citizen> getId(String id);
+	List<Object> getId(String id);
 
 }

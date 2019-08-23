@@ -19,6 +19,10 @@ public class Citizen {
 		this.vehicleRegistrationNumber = vehicleRegistrationNumber;
 	}
 
+	public Citizen() {
+
+	}
+
 	public String getVehicleRegistrationNumber() {
 		return vehicleRegistrationNumber;
 	}

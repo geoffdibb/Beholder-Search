@@ -2,49 +2,53 @@ package com.bae.entity;
 
 public class Associate {
 
-	private String name;
-	private int numberOfPhoneCalls;
-	private String latestPhoneCall;
-	
-	
-	public Associate(String name, int numberOfPhoneCalls, String latestPhoneCall) {
+	private String forenames;
+	private int phoneCalls;
+	private String latest_Call;
+	private String citizenId;
+
+	public Associate(String name, int numberOfPhoneCalls, String latestPhoneCall, String citizenId) {
 		super();
-		this.name = name;
-		this.numberOfPhoneCalls = numberOfPhoneCalls;
-		this.latestPhoneCall = latestPhoneCall;
+		this.forenames = name;
+		this.phoneCalls = numberOfPhoneCalls;
+		this.latest_Call = latestPhoneCall;
+		this.citizenId = citizenId;
 	}
 
+	public Associate() {
+
+	}
+
+	public String getCitizenId() {
+		return citizenId;
+	}
+
+	public void setCitizenId(String citizenId) {
+		this.citizenId = citizenId;
+	}
 
 	public String getName() {
-		return name;
+		return forenames;
 	}
-
 
 	public void setName(String name) {
-		this.name = name;
+		this.forenames = name;
 	}
-
 
 	public int getNumberOfPhoneCalls() {
-		return numberOfPhoneCalls;
+		return phoneCalls;
 	}
-
 
 	public void setNumberOfPhoneCalls(int numberOfPhoneCalls) {
-		this.numberOfPhoneCalls = numberOfPhoneCalls;
+		this.phoneCalls = numberOfPhoneCalls;
 	}
-
 
 	public String getLatestPhoneCall() {
-		return latestPhoneCall;
+		return latest_Call;
 	}
-
 
 	public void setLatestPhoneCall(String latestPhoneCall) {
-		this.latestPhoneCall = latestPhoneCall;
+		this.latest_Call = latestPhoneCall;
 	}
-	
-	
-	
-	
+
 }

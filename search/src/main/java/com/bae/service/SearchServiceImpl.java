@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bae.entity.Associate;
 import com.bae.entity.Citizen;
 import com.bae.entity.SuspectCar;
+import com.bae.repository.AssociateRepository;
 import com.bae.repository.CitizenRepository;
 import com.bae.repository.SuspectCarRepository;
 
@@ -16,11 +18,14 @@ public class SearchServiceImpl implements SearchService {
 
 	private CitizenRepository citizenRepoy;
 	private SuspectCarRepository suspectRepo;
+	private AssociateRepository associateRepo;
 
 	@Autowired
-	public SearchServiceImpl(CitizenRepository citizenRepoy, SuspectCarRepository suspectRepo) {
+	public SearchServiceImpl(CitizenRepository citizenRepoy, SuspectCarRepository suspectRepo,
+			AssociateRepository associateRepo) {
 		this.citizenRepoy = citizenRepoy;
 		this.suspectRepo = suspectRepo;
+		this.associateRepo = associateRepo;
 	}
 
 	public SearchServiceImpl() {
@@ -68,12 +73,16 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
-	public List<Citizen> getId(String id) {
-		List<Citizen> foundList = new ArrayList<>();
+	public List<Object> getId(String id) {
+		List<Object> foundList = new ArrayList<>();
+		List<Associate> foundAssociates = associateRepo.findAll();
 		List<Citizen> list = citizenRepoy.findAll();
 		for (int i = 0; i < list.size(); i++) {
 			if (id.contentEquals(list.get(i).getCitizenId())) {
 				foundList.add(list.get(i));
+			}
+			if (id.contentEquals(foundAssociates.get(i).getCitizenId())) {
+				foundList.add(foundAssociates.get(i));
 			}
 		}
 		return foundList;

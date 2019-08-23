@@ -46,7 +46,7 @@ public class SearchController {
 	}
 
 	@GetMapping("${path.profileId}")
-	public List<Citizen> getId(@PathVariable("id") String id) {
+	public List<Object> getId(@PathVariable("id") String id) {
 		return service.getId(id);
 	}
 }
