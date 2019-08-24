@@ -2,6 +2,8 @@ package com.bae.service;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -26,10 +28,27 @@ public class ServiceTests {
 	public String toString() {
 		return super.toString() + TestConstants.FOUNDLIST;
 	}
+	
+	@Test
+	public void searchTestName() {
+		Mockito.when(service.search("name", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
+		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("name", "searchTerm"));
+	}
+	
+	@Test
+	public void searchTestCarReg() {
+		Mockito.when(service.search("car reg", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
+		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("name", "searchTerm"));
+	}
+	
+	@Test
+	public void searchTestAssociates() {
+		Mockito.when(service.search("getassociates", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
+		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("name", "searchTerm"));
+	}
 
 	@Test
 	public void getNameTest() {
-
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String name = "name";
@@ -38,18 +57,7 @@ public class ServiceTests {
 	}
 
 	@Test
-	public void getCarregTest() {
-
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
-		String carreg = "car";
-		assertEquals(TestConstants.FOUNDLIST, service.getSuspectCar(carreg));
-		Mockito.verify(repository).findAll();
-	}
-
-	@Test
 	public void getLocationTest() {
-
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String location = "loce";
@@ -58,8 +66,16 @@ public class ServiceTests {
 	}
 
 	@Test
-	public void getIDTest() {
+	public void getCarregTest() {
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
+		String carreg = "car";
+		assertEquals(TestConstants.FOUNDLIST, service.getSuspectCar(carreg));
+		Mockito.verify(repository).findAll();
+	}
 
+	@Test
+	public void getIDTest() {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String id = "ID";
