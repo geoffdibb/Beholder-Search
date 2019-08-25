@@ -1,6 +1,7 @@
 package com.bae.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,9 @@ public class SearchServiceImpl implements SearchService {
 	private AssociateRepository associateRepo;
 
 	@Autowired
-	public SearchServiceImpl(CitizenRepository citizenRepoy, SuspectCarRepository suspectRepo,
+	public SearchServiceImpl(CitizenRepository citizenRepo, SuspectCarRepository suspectRepo,
 			AssociateRepository associateRepo) {
-		this.citizenRepo = citizenRepoy;
+		this.citizenRepo = citizenRepo;
 		this.suspectRepo = suspectRepo;
 		this.associateRepo = associateRepo;
 	}
@@ -40,9 +41,8 @@ public class SearchServiceImpl implements SearchService {
 		case "getassociates":
 			return getId(searchTerm);
 		default:
-			return null;
+			return Collections.emptyList();
 		}
-
 	}
 
 	@Override
