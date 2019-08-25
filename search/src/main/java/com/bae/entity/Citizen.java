@@ -26,7 +26,6 @@ public class Citizen {
 	}
 
 	public Citizen() {
-
 	}
 
 	public String getPhoneNumber() {

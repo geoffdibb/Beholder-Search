@@ -20,6 +20,7 @@ import com.bae.util.TestConstants;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ServiceTests {
+	
 	@InjectMocks
 	private SearchServiceImpl service;
 
