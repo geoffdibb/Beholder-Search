@@ -13,7 +13,7 @@ public class TestConstants {
 	public static final Associate MOCK_ASSOCIATE_OBJECT2 = new Associate("name", "surname", "phonecalls", "latestPhoneCall", "id", "associateId");
 	
 	public static final Citizen MOCK_CITIZEN_OBJECT= new Citizen("id", "name", "surname", "0", "homeAddress", "car_reg", "age", "gender", "phoneNumber");
-	public static final Citizen MOCK_CITIZEN_OBJECT2 = new Citizen("id2", "name", "surname", "0", "homeAddress", "car_reg", "age", "gender", "phoneNumber");
+	public static final Citizen MOCK_CITIZEN_OBJECT2 = new Citizen("id2", "Name", "Surname", "0", "homeAddress", "car_reg", "age", "gender", "phoneNumber");
 	
 	public static final SuspectCar MOCK_CAR_OBJECT = new SuspectCar("id", "name", "surname", "carReg", "make", "model", "colour");
 	public static final SuspectCar MOCK_CAR_OBJECT2 = new SuspectCar("id", "name", "surname", "carReg2", "make", "model", "colour");

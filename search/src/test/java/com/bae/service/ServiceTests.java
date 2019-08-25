@@ -2,6 +2,7 @@ package com.bae.service;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.bae.entity.Citizen;
 import com.bae.repository.AssociateRepository;
 import com.bae.repository.CitizenRepository;
 import com.bae.repository.SuspectCarRepository;
@@ -66,9 +68,45 @@ public class ServiceTests {
 		assertEquals(TestConstants.FOUNDLIST, service.getName(name));
 		Mockito.verify(citizenRepo).findAll();
 	}
+	
+	@Test
+	public void getNameTest2() {
+		//test to include if statement for coverage 
+		//hopefully
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
+		String name = "Name";
+
+		assertEquals(TestConstants.FOUNDLIST, service.getName(name));
+		Mockito.verify(citizenRepo).findAll();
+	}
+	
+//	public List<Object> getName(String name) {
+//		List<Object> foundList = new ArrayList<>();
+//		List<Citizen> list = citizenRepo.findAll();
+//		for (int i = 0; i < list.size(); i++) {
+//			String dbName = (list.get(i).getForenames().toLowerCase() + " " + list.get(i).getSurname().toLowerCase());
+//			if (dbName.contains(name.toLowerCase())) {
+//				foundList.add(list.get(i));
+//			}
+//
+//		}
+//		return foundList;
+//	}
 
 	@Test
 	public void getLocationTest() {
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
+		String location = "location";
+		assertEquals(TestConstants.FOUNDLIST, service.getLocation(location));
+		Mockito.verify(citizenRepo).findAll();
+	}
+	
+	@Test
+	public void getLocationTest2() {
+		//test to include if statement for coverage 
+		//hopefully
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String location = "location";
@@ -84,9 +122,31 @@ public class ServiceTests {
 		assertEquals(TestConstants.FOUNDLIST, service.getSuspectCar(carReg));
 		Mockito.verify(suspectRepo).findAll();
 	}
+	
+	@Test
+	public void getCarregTest2() {
+		//test to include if statement for coverage 
+		//hopefully
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
+		String carReg = "car reg";
+		assertEquals(TestConstants.FOUNDLIST, service.getSuspectCar(carReg));
+		Mockito.verify(suspectRepo).findAll();
+	}
 
 	@Test
 	public void getIDTest() {
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
+		String id = "id";
+		assertEquals(TestConstants.FOUNDLIST, service.getId(id));
+		Mockito.verify(associateRepo).findAll();
+	}
+	
+	@Test
+	public void getIDTest2() {
+		//test to include if statement for coverage 
+		//hopefully
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String id = "id";
