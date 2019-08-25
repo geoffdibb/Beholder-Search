@@ -32,19 +32,10 @@ public class ServiceTests {
 	@Mock
 	private AssociateRepository associateRepo;
 
-	@Override
-	public String toString() {
-		return super.toString() + TestConstants.FOUNDLIST;
-	}
-
 	@Test
 	public void searchTest() {
 		Mockito.when(service.search("name", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
 		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("name", "searchTerm"));
-//		Mockito.when(service.search("car reg", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
-//		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("name", "searchTerm"));
-//		Mockito.when(service.search("getassociates", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
-//		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("name", "searchTerm"));
 	}
 
 	@Test
