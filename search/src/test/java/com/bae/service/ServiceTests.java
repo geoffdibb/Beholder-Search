@@ -12,7 +12,9 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.bae.repository.AssociateRepository;
 import com.bae.repository.CitizenRepository;
+import com.bae.repository.SuspectCarRepository;
 import com.bae.util.TestConstants;
 
 @RunWith(SpringRunner.class)
@@ -22,7 +24,13 @@ public class ServiceTests {
 	private SearchServiceImpl service;
 
 	@Mock
-	private CitizenRepository repository;
+	private CitizenRepository citizenRepo;
+	
+	@Mock
+	private SuspectCarRepository suspectRepo;
+	
+	@Mock
+	private AssociateRepository associateRepo;
 
 	@Override
 	public String toString() {
@@ -45,7 +53,7 @@ public class ServiceTests {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String name = "name";
 		assertEquals(TestConstants.FOUNDLIST, service.getName(name));
-		Mockito.verify(repository).findAll();
+		Mockito.verify(citizenRepo).findAll();
 	}
 
 	@Test
@@ -54,7 +62,7 @@ public class ServiceTests {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String location = "location";
 		assertEquals(TestConstants.FOUNDLIST, service.getLocation(location));
-		Mockito.verify(repository).findAll();
+		Mockito.verify(citizenRepo).findAll();
 	}
 
 	@Test
@@ -63,7 +71,7 @@ public class ServiceTests {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String carReg = "car reg";
 		assertEquals(TestConstants.FOUNDLIST, service.getSuspectCar(carReg));
-		Mockito.verify(repository).findAll();
+		Mockito.verify(suspectRepo).findAll();
 	}
 
 	@Test
@@ -72,7 +80,7 @@ public class ServiceTests {
 		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
 		String id = "id";
 		assertEquals(TestConstants.FOUNDLIST, service.getId(id));
-		Mockito.verify(repository).findAll();
+		Mockito.verify(associateRepo).findAll();
 	}
 
 }

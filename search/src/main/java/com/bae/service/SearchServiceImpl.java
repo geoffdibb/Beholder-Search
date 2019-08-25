@@ -67,7 +67,6 @@ public class SearchServiceImpl implements SearchService {
 			if (location.equals(list.get(i).getHomeAddress())) {
 				foundList.add(list.get(i));
 			}
-
 		}
 		return foundList;
 	}
