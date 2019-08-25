@@ -69,7 +69,6 @@ public class SearchServiceImpl implements SearchService {
 			}
 
 		}
-
 		return foundList;
 	}
 
@@ -83,7 +82,6 @@ public class SearchServiceImpl implements SearchService {
 			}
 		}
 		return foundList;
-
 	}
 
 	@Override
@@ -96,7 +94,6 @@ public class SearchServiceImpl implements SearchService {
 			}
 		}
 		return foundList;
-
 	}
 
 }
