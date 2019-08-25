@@ -2,6 +2,7 @@ package com.bae.service;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.junit.Test;
@@ -37,6 +38,24 @@ public class ServiceTests {
 	public void searchTest() {
 		Mockito.when(service.search("name", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
 		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("name", "searchTerm"));
+	}
+	
+	@Test
+	public void searchTest2() {
+		Mockito.when(service.search("car reg", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
+		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("car reg", "searchTerm"));
+	}
+	
+	@Test
+	public void searchTest3() {
+		Mockito.when(service.search("getassociates", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
+		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("getassociates", "searchTerm"));
+	}
+	
+	@Test
+	public void searchTest4() {
+		Mockito.when(service.search("", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
+		assertEquals(Collections.emptyList(), service.search("getassociates", "searchTerm"));
 	}
 
 	@Test
