@@ -14,7 +14,9 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.bae.entity.Associate;
 import com.bae.entity.Citizen;
+import com.bae.entity.SuspectCar;
 import com.bae.repository.AssociateRepository;
 import com.bae.repository.CitizenRepository;
 import com.bae.repository.SuspectCarRepository;
@@ -23,16 +25,16 @@ import com.bae.util.TestConstants;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ServiceTests {
-	
+
 	@InjectMocks
 	private SearchServiceImpl service;
 
 	@Mock
 	private CitizenRepository citizenRepo;
-	
+
 	@Mock
 	private SuspectCarRepository suspectRepo;
-	
+
 	@Mock
 	private AssociateRepository associateRepo;
 
@@ -41,19 +43,19 @@ public class ServiceTests {
 		Mockito.when(service.search("name", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
 		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("name", "searchTerm"));
 	}
-	
+
 	@Test
 	public void searchTest2() {
 		Mockito.when(service.search("car reg", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
 		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("car reg", "searchTerm"));
 	}
-	
+
 	@Test
 	public void searchTest3() {
 		Mockito.when(service.search("getassociates", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
 		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, service.search("getassociates", "searchTerm"));
 	}
-	
+
 	@Test
 	public void searchTest4() {
 		Mockito.when(service.search("", "searchTerm")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
@@ -62,95 +64,153 @@ public class ServiceTests {
 
 	@Test
 	public void getNameTest() {
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
-		String name = "name";
-		assertEquals(TestConstants.FOUNDLIST, service.getName(name));
+		// test if no results
+		List<Citizen> searchList = new ArrayList<>();
+		searchList.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		searchList.add(TestConstants.MOCK_CITIZEN_OBJECT3);
+		String name = "John";
+		List<Citizen> list = new ArrayList<>();
+		Mockito.when(citizenRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getName(name));
 		Mockito.verify(citizenRepo).findAll();
 	}
-	
+
 	@Test
 	public void getNameTest2() {
-		//test to include if statement for coverage 
-		//hopefully
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
+		// test if one result
+		List<Citizen> searchList = new ArrayList<>();
+		searchList.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		searchList.add(TestConstants.MOCK_CITIZEN_OBJECT3);
+		List<Citizen> list = new ArrayList<>();
+		list.add(TestConstants.MOCK_CITIZEN_OBJECT);
 		String name = "Name";
-
-		assertEquals(TestConstants.FOUNDLIST, service.getName(name));
+		Mockito.when(citizenRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getName(name));
 		Mockito.verify(citizenRepo).findAll();
 	}
-	
-//	public List<Object> getName(String name) {
-//		List<Object> foundList = new ArrayList<>();
-//		List<Citizen> list = citizenRepo.findAll();
-//		for (int i = 0; i < list.size(); i++) {
-//			String dbName = (list.get(i).getForenames().toLowerCase() + " " + list.get(i).getSurname().toLowerCase());
-//			if (dbName.contains(name.toLowerCase())) {
-//				foundList.add(list.get(i));
-//			}
-//
-//		}
-//		return foundList;
-//	}
+
+	@Test
+	public void getNameTest3() {
+		// test if no data
+		List<Citizen> searchList = new ArrayList<>();
+		List<Citizen> list = new ArrayList<>();
+		String name = "Name";
+		Mockito.when(citizenRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getName(name));
+		Mockito.verify(citizenRepo).findAll();
+	}
 
 	@Test
 	public void getLocationTest() {
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
+		// test if no results
+		List<Citizen> searchList = new ArrayList<>();
+		searchList.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		searchList.add(TestConstants.MOCK_CITIZEN_OBJECT3);
 		String location = "location";
-		assertEquals(TestConstants.FOUNDLIST, service.getLocation(location));
+		List<Citizen> list = new ArrayList<>();
+		Mockito.when(citizenRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getLocation(location));
 		Mockito.verify(citizenRepo).findAll();
 	}
-	
+
 	@Test
 	public void getLocationTest2() {
-		//test to include if statement for coverage 
-		//hopefully
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
-		String location = "location";
-		assertEquals(TestConstants.FOUNDLIST, service.getLocation(location));
+		// test if one result
+		List<Citizen> searchList = new ArrayList<>();
+		searchList.add(TestConstants.MOCK_CITIZEN_OBJECT);
+		searchList.add(TestConstants.MOCK_CITIZEN_OBJECT3);
+		String location = "somePlace";
+		List<Citizen> list = new ArrayList<>();
+		list.add(TestConstants.MOCK_CITIZEN_OBJECT3);
+		Mockito.when(citizenRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getLocation(location));
+		Mockito.verify(citizenRepo).findAll();
+	}
+
+	@Test
+	public void getLocationTest3() {
+		// test if no data
+		List<Citizen> searchList = new ArrayList<>();
+		String location = "empty";
+		List<Citizen> list = new ArrayList<>();
+		Mockito.when(citizenRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getLocation(location));
 		Mockito.verify(citizenRepo).findAll();
 	}
 
 	@Test
 	public void getCarregTest() {
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
+		// test if no results
+		List<SuspectCar> searchList = new ArrayList<>();
+		searchList.add(TestConstants.MOCK_CAR_OBJECT);
+		searchList.add(TestConstants.MOCK_CAR_OBJECT3);
 		String carReg = "car reg";
-		assertEquals(TestConstants.FOUNDLIST, service.getSuspectCar(carReg));
+		List<SuspectCar> list = new ArrayList<>();
+		Mockito.when(suspectRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getSuspectCar(carReg));
 		Mockito.verify(suspectRepo).findAll();
 	}
-	
+
 	@Test
 	public void getCarregTest2() {
-		//test to include if statement for coverage 
-		//hopefully
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
-		String carReg = "car reg";
-		assertEquals(TestConstants.FOUNDLIST, service.getSuspectCar(carReg));
+		// test if one results
+		List<SuspectCar> searchList = new ArrayList<>();
+		searchList.add(TestConstants.MOCK_CAR_OBJECT);
+		searchList.add(TestConstants.MOCK_CAR_OBJECT3);
+		String carReg = "QW12 QWE";
+		List<SuspectCar> list = new ArrayList<>();
+		list.add(TestConstants.MOCK_CAR_OBJECT3);
+		Mockito.when(suspectRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getSuspectCar(carReg));
+		Mockito.verify(suspectRepo).findAll();
+	}
+
+	@Test
+	public void getCarregTest3() {
+		// test if no data
+		List<SuspectCar> searchList = new ArrayList<>();
+		String carReg = "QW12 QWE";
+		List<SuspectCar> list = new ArrayList<>();
+		Mockito.when(suspectRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getSuspectCar(carReg));
 		Mockito.verify(suspectRepo).findAll();
 	}
 
 	@Test
 	public void getIDTest() {
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
-		String id = "id";
-		assertEquals(TestConstants.FOUNDLIST, service.getId(id));
+		// test if no results
+		List<Associate> searchList = new ArrayList<>();
+		searchList.add(TestConstants.MOCK_ASSOCIATE_OBJECT);
+		searchList.add(TestConstants.MOCK_ASSOCIATE_OBJECT3);
+		String id = "nothing";
+		List<Associate> list = new ArrayList<>();
+		Mockito.when(associateRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getId(id));
+		Mockito.verify(associateRepo).findAll();
+	}
+
+	@Test
+	public void getIDTest2() {
+		// test if one results
+		List<Associate> searchList = new ArrayList<>();
+		searchList.add(TestConstants.MOCK_ASSOCIATE_OBJECT);
+		searchList.add(TestConstants.MOCK_ASSOCIATE_OBJECT3);
+		String id = "123";
+		List<Associate> list = new ArrayList<>();
+		list.add(TestConstants.MOCK_ASSOCIATE_OBJECT3);
+		Mockito.when(associateRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getId(id));
 		Mockito.verify(associateRepo).findAll();
 	}
 	
 	@Test
-	public void getIDTest2() {
-		//test to include if statement for coverage 
-		//hopefully
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_OBJECT2);
-		String id = "id";
-		assertEquals(TestConstants.FOUNDLIST, service.getId(id));
+	public void getIDTest3() {
+		// test if no data
+		List<Associate> searchList = new ArrayList<>();
+		String id = "123";
+		List<Associate> list = new ArrayList<>();
+		Mockito.when(associateRepo.findAll()).thenReturn(searchList);
+		assertEquals(list, service.getId(id));
 		Mockito.verify(associateRepo).findAll();
 	}
 
