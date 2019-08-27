@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bae.entity.Citizen;
 import com.bae.service.SearchService;
 
 @RestController
-@RequestMapping("${path.requestLogs}")
+@RequestMapping("${path.search}")
 public class SearchController {
 	private SearchService service;
 
@@ -29,23 +28,10 @@ public class SearchController {
 		this.service = service;
 	}
 
-	@GetMapping("${path.getCitizenNameLogs}")
-	public List<Citizen> getName(@PathVariable("name") String name) {
-		return service.getName(name);
+	@GetMapping("${path.searchCategory}")
+	public List<Object> search(@PathVariable("category") String category,
+			@PathVariable("searchTerm") String searchTerm) {
+		return service.search(category, searchTerm);
 	}
 
-	@GetMapping("${path.getCitizenLogs}")
-	public List<Citizen> getLocation(@PathVariable("location") String location) {
-		return service.getLocation(location);
-	}
-
-	@GetMapping("${path.getCitizenCarRegLogs}")
-	public List<Citizen> getCarReg(@PathVariable("carreg") String carreg) {
-		return service.getCarReg(carreg);
-	}
-	
-	@GetMapping("${path.getIDLogs}")
-	public List<Citizen> getId(@PathVariable("id") String id) {
-		return service.getId(id);
-	}
 }

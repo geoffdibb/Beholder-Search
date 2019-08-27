@@ -2,49 +2,74 @@ package com.bae.entity;
 
 public class Associate {
 
-	private String name;
-	private int numberOfPhoneCalls;
-	private String latestPhoneCall;
-	
-	
-	public Associate(String name, int numberOfPhoneCalls, String latestPhoneCall) {
+	private String forenames;
+	private String surname;
+	private String phonecalls;
+	private String latest_call;
+	private String citizenId;
+	private String associateId;
+
+	public Associate(String forenames, String surname, String phonecalls, String latestPhoneCall, String citizenId,
+			String associateId) {
 		super();
-		this.name = name;
-		this.numberOfPhoneCalls = numberOfPhoneCalls;
-		this.latestPhoneCall = latestPhoneCall;
+		this.forenames = forenames;
+		this.surname = surname;
+		this.phonecalls = phonecalls;
+		this.latest_call = latestPhoneCall;
+		this.citizenId = citizenId;
+		this.associateId = associateId;
 	}
 
+	public Associate() {
+
+	}
+
+	public String getCitizenId() {
+		return citizenId;
+	}
+
+	public void setCitizenId(String citizenId) {
+		this.citizenId = citizenId;
+	}
 
 	public String getName() {
-		return name;
+		return forenames;
 	}
 
-
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String forenames) {
+		this.forenames = forenames;
 	}
 
-
-	public int getNumberOfPhoneCalls() {
-		return numberOfPhoneCalls;
+	public String getSurname() {
+		return surname;
 	}
 
-
-	public void setNumberOfPhoneCalls(int numberOfPhoneCalls) {
-		this.numberOfPhoneCalls = numberOfPhoneCalls;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
+	public String getNumberOfPhoneCalls() {
+		return phonecalls;
+	}
+
+	public void setNumberOfPhoneCalls(String phoneCalls) {
+		this.phonecalls = phoneCalls;
+	}
 
 	public String getLatestPhoneCall() {
-		return latestPhoneCall;
+		return latest_call;
 	}
-
 
 	public void setLatestPhoneCall(String latestPhoneCall) {
-		this.latestPhoneCall = latestPhoneCall;
+		this.latest_call = latestPhoneCall;
 	}
-	
-	
-	
-	
+
+	public String getAssociateId() {
+		return associateId;
+	}
+
+	public void setAssociateId(String associateId) {
+		this.associateId = associateId;
+	}
+
 }

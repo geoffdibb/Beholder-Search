@@ -4,17 +4,17 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.bae.entity.Citizen;
-
 @Service
 public interface SearchService {
 
-		List<Citizen> getName(String name);
-		
-		List<Citizen> getLocation(String location);
+	List<Object> search(String category, String searchTerm);
 
-		List<Citizen> getCarReg(String carreg);
-		
-		List<Citizen> getId(String id);
+	List<Object> getName(String name);
+
+	List<Object> getLocation(String location);
+
+	List<Object> getSuspectCar(String carreg);
+
+	List<Object> getId(String id);
 
 }

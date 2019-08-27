@@ -1,6 +1,9 @@
 package com.bae.controller;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
+
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,59 +19,33 @@ import com.bae.util.TestConstants;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SearchControllerTest {
+
 	@InjectMocks
 	SearchController controller;
 
 	@Mock
 	SearchServiceImpl service;
-
+	
 	@Test
-	public void testgetService() {
-		assertEquals(service, controller.getService());
-
+	public void contextLoads() {
+		assertThat(controller).isNotNull();
 	}
 
 	@Test
-	public void testsetService() {
+	public void testGetService() {
+		assertEquals(service, controller.getService());
+	}
+
+	@Test
+	public void testSetService() {
 		controller.setService(service);
 		assertEquals(service, controller.getService());
 	}
-	
-	@Test
-	public void getAUserTest() {
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-		
-		Mockito.when(service.getName(null)).thenReturn(TestConstants.MOCK_CITIZEN_ARRAY);
-		assertEquals(TestConstants.MOCK_CITIZEN_ARRAY, controller.getName(null));
-		Mockito.verify(service).getName(null);
-	}
-	@Test
-	public void getAcarTest() {
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-		
-		Mockito.when(service.getCarReg(null)).thenReturn(TestConstants.MOCK_CITIZEN_ARRAY);
-		assertEquals(TestConstants.MOCK_CITIZEN_ARRAY, controller.getCarReg(null));
-		Mockito.verify(service).getCarReg(null);
-	}
-	@Test
-	public void getAlocationTest() {
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-		
-		Mockito.when(service.getLocation(null)).thenReturn(TestConstants.MOCK_CITIZEN_ARRAY);
-		assertEquals(TestConstants.MOCK_CITIZEN_ARRAY, controller.getLocation(null));
-		Mockito.verify(service).getLocation(null);
-	}
-	@Test
-	public void getAnIdTest() {
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN);
-		TestConstants.MOCK_CITIZEN_ARRAY.add(TestConstants.MOCK_CITIZEN_2);
-		
-		Mockito.when(service.getId(null)).thenReturn(TestConstants.MOCK_CITIZEN_ARRAY);
-		assertEquals(TestConstants.MOCK_CITIZEN_ARRAY, controller.getId(null));
-		Mockito.verify(service).getId(null);
-	}
-}
 
+	@Test
+	public void searchTest() {
+		Mockito.when(service.getName("name")).thenReturn(TestConstants.MOCK_OBJECT_ARRAY);
+		assertEquals(TestConstants.MOCK_OBJECT_ARRAY, controller.search("name", "searchTerm"));
+	}
+	
+}

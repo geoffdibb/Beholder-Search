@@ -5,112 +5,98 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.bae.entity.Incident;
+import com.bae.util.TestConstants;
 
 import junit.framework.Assert;
 
 public class IncidentTest {
-	Incident account = new Incident("citizenId", "Citizen", "timestamp", "streetname", "longitude", "latitude", "type", "detail");
-
+	
 	@Test
-	public void testGetterCitizenId() {
-
-		assertEquals( "citizenId",account.getCitizenId());
+	public void testGetCitizenId() {
+		assertEquals( "id",TestConstants.MOCK_INCIDENT_OBJECT.getCitizenId());
 	}
 
 	@Test
-	public void testSetterCitizenId() {
-		account.setCitizenId("citizenId2");
-		assertEquals( "citizenId2", account.getCitizenId());
+	public void testSetCitizenId() {
+		TestConstants.MOCK_INCIDENT_OBJECT2.setCitizenId("citizenId2");
+		assertEquals( "citizenId2", TestConstants.MOCK_INCIDENT_OBJECT2.getCitizenId());	
+	}
+	
+	@Test
+	public void testGetCitizen() {
+		assertEquals("citizen", TestConstants.MOCK_INCIDENT_OBJECT.getCitizen() );
+	}
+
+	@Test
+	public void testSetCitizen() {
+		TestConstants.MOCK_INCIDENT_OBJECT2.setCitizen("Citizen2");
+		assertEquals( "Citizen2", TestConstants.MOCK_INCIDENT_OBJECT2.getCitizen());	
+	}
+	
+	@Test
+	public void testGetTimeStamp() {
+		assertEquals("timeStamp", TestConstants.MOCK_INCIDENT_OBJECT.getTimestamp() );
+	}
+
+	@Test
+	public void testSetTimeStamp() {
+		TestConstants.MOCK_INCIDENT_OBJECT2.setTimestamp("timestamp2");
+		assertEquals("timestamp2", TestConstants.MOCK_INCIDENT_OBJECT2.getTimestamp());
+	}
+	
+	@Test
+	public void testGeTStreetName() {
+		assertEquals("streetName",TestConstants.MOCK_INCIDENT_OBJECT.getStreetname());
+	}
+
+	@Test
+	public void testSetStreetName() {
+		TestConstants.MOCK_INCIDENT_OBJECT2.setStreetname("streetname2");
+		assertEquals("streetname2",TestConstants.MOCK_INCIDENT_OBJECT2.getStreetname());
+	}
+	
+	@Test
+	public void testGetLongitude() {
+		assertEquals( "longitude",TestConstants.MOCK_INCIDENT_OBJECT.getLongitude());
+	}
+
+	@Test
+	public void testSetLongitude() {
+		TestConstants.MOCK_INCIDENT_OBJECT2.setLongitude("longitude2");
+		assertEquals("longitude2", TestConstants.MOCK_INCIDENT_OBJECT2.getLongitude());
+	}
+	@Test
+	public void testGetLatitude() {
+		assertEquals( "latitude",TestConstants.MOCK_INCIDENT_OBJECT.getLatitude());
+	}
+
+	@Test
+	public void testSetLatitude() {
+		TestConstants.MOCK_INCIDENT_OBJECT2.setLatitude("latitude2");
+		assertEquals( "latitude2", TestConstants.MOCK_INCIDENT_OBJECT2.getLatitude());
+	}
+	
+	@Test
+	public void testGetType() {
+		assertEquals( "type",TestConstants.MOCK_INCIDENT_OBJECT.getType());
+	}
+
+	@Test
+	public void testSetType() {
+		TestConstants.MOCK_INCIDENT_OBJECT2.setType("type2");
+		assertEquals("type2",TestConstants.MOCK_INCIDENT_OBJECT2.getType() );
 		
 	}
 	
 	@Test
-	public void testGetterCitizen() {
-
-		assertEquals("Citizen", account.getCitizen() );
+	public void testGetDetail() {
+		assertEquals("detail",TestConstants.MOCK_INCIDENT_OBJECT.getDetail() );
 	}
 
 	@Test
-	public void testSetterCitizen() {
-		account.setCitizen("Citizen2");
-		assertEquals( "Citizen2", account.getCitizen());
-		
+	public void testSetDetail() {
+		TestConstants.MOCK_INCIDENT_OBJECT2.setDetail("detail2");
+		assertEquals( "detail2",TestConstants.MOCK_INCIDENT_OBJECT2.getDetail());
 	}
 	
-	@Test
-	public void testGetterTimeStamp() {
-
-		assertEquals("timestamp", account.getTimestamp() );
-	}
-
-	@Test
-	public void testSetterTimeStamp() {
-		account.setTimestamp("timestamp2");
-		assertEquals("timestamp2", account.getTimestamp());
-		
-	}
-	
-	@Test
-	public void testGetterStreetName() {
-
-		assertEquals("streetname",account.getStreetname());
-	}
-
-	@Test
-	public void testSetterStreetName() {
-		account.setStreetname("streetname2");
-		assertEquals("streetname2",account.getStreetname());
-		
-	}
-	
-	@Test
-	public void testGetterLongitude() {
-
-		assertEquals( "longitude",account.getLongitude());
-	}
-
-	@Test
-	public void testSetterLongitude() {
-		account.setLongitude("longitude2");
-		assertEquals("longitude2", account.getLongitude());
-		
-	}
-	@Test
-	public void testGetterLatitude() {
-
-		assertEquals( "latitude",account.getLatitude());
-	}
-
-	@Test
-	public void testSetterLatitude() {
-		account.setLatitude("latitude2");
-		assertEquals( "latitude2", account.getLatitude());
-		
-	}
-	
-	@Test
-	public void testGetterType() {
-
-		assertEquals( "type",account.getType());
-	}
-
-	@Test
-	public void testSetterType() {
-		account.setType("type2");
-		assertEquals("type2",account.getType() );
-		
-	}
-	
-	@Test
-	public void testGetterDetail() {
-
-		assertEquals("detail",account.getDetail() );
-	}
-
-	@Test
-	public void testSetterDetail() {
-		account.setDetail("detail2");
-		assertEquals( "detail2",account.getDetail());
-		
-	}
 }

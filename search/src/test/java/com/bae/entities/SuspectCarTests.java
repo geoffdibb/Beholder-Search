@@ -5,106 +5,85 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.bae.entity.SuspectCar;
-
-import junit.framework.Assert;
+import com.bae.util.TestConstants;
 
 public class SuspectCarTests {
-		SuspectCar account = new SuspectCar("citizenid", "owner", "carreg", "make", "model", "colour", "yearsowned", "noofowners");
 
-		@Test
-		public void testGetterCitizenId() {
+	@Test
+	public void testGetCitizenId() {
+		assertEquals("id", TestConstants.MOCK_CAR_OBJECT.getCitizenID());
+	}
 
-			assertEquals("citizenid",account.getCitizenID() );
-		}
+	@Test
+	public void testSetCitizenId() {
+		TestConstants.MOCK_CAR_OBJECT2.setCitizenID("citizenid2");
+		assertEquals("citizenid2", TestConstants.MOCK_CAR_OBJECT2.getCitizenID());
+	}
 
-		@Test
-		public void testSetterCitizenId() {
-			account.setCitizenID("citizenid2");
-			assertEquals("citizenid2",account.getCitizenID() );
-		}
-		
-		@Test
-		public void testGetterOwner() {
+	@Test
+	public void testGetCarReg() {
+		assertEquals("carReg", TestConstants.MOCK_CAR_OBJECT.getCarReg());
+	}
 
-			assertEquals( "owner",account.getOwner());
-		}
+	@Test
+	public void testSetCarReg() {
+		TestConstants.MOCK_CAR_OBJECT2.setCarReg("carreg2");
+		assertEquals("carreg2", TestConstants.MOCK_CAR_OBJECT2.getCarReg());
+	}
 
-		@Test
-		public void testSetterOwner() {
-			account.setOwner("owner2");
-			assertEquals( "owner2",account.getOwner());
-		}
-		
-		@Test
-		public void testGetterCarReg() {
+	@Test
+	public void testGetMake() {
+		assertEquals("make", TestConstants.MOCK_CAR_OBJECT.getMake());
+	}
 
-			assertEquals( "carreg",account.getCarReg());
-		}
+	@Test
+	public void testSetMake() {
+		TestConstants.MOCK_CAR_OBJECT2.setMake("make2");
+		assertEquals("make2", TestConstants.MOCK_CAR_OBJECT2.getMake());
+	}
 
-		@Test
-		public void testSetterCarReg() {
-			account.setCarReg("carreg2");
-			assertEquals("carreg2",account.getCarReg() );
-		}
-		
-		@Test
-		public void testGetterMake() {
+	@Test
+	public void testGetModel() {
+		assertEquals("model", TestConstants.MOCK_CAR_OBJECT.getModel());
+	}
 
-			assertEquals( "make",account.getMake());
-		}
+	@Test
+	public void testSetModel() {
+		TestConstants.MOCK_CAR_OBJECT2.setModel("model2");
+		assertEquals("model2", TestConstants.MOCK_CAR_OBJECT2.getModel());
+	}
 
-		@Test
-		public void testSetterMake() {
-			account.setMake("make2");
-			assertEquals( "make2",account.getMake());
-		}
-		
-		@Test
-		public void testGetterModel() {
+	@Test
+	public void testGetColour() {
+		assertEquals("colour", TestConstants.MOCK_CAR_OBJECT.getColour());
+	}
 
-			assertEquals( "model",account.getModel());
-		}
+	@Test
+	public void testSetColourl() {
+		TestConstants.MOCK_CAR_OBJECT2.setColour("colour2");
+		assertEquals("colour2", TestConstants.MOCK_CAR_OBJECT2.getColour());
+	}
 
-		@Test
-		public void testSetterModel() {
-			account.setModel("model2");
-			assertEquals( "model2",account.getModel());
-		}
-		
-		@Test
-		public void testGetterColour() {
+	@Test
+	public void testGetnoOfOwners() {
+		assertEquals("surname", TestConstants.MOCK_CAR_OBJECT.getSurname());
+	}
 
-			assertEquals( "colour",account.getColour());
-		}
-
-		@Test
-		public void testSetterColourl() {
-			account.setColour("colour2");
-			assertEquals( "colour2",account.getColour());
-		}
-		
-		@Test
-		public void testGetteryears_owned() {
-
-			assertEquals( "yearsowned",account.getYearsOwned());
-		}
-
-		@Test
-		public void testSetteryears_owned() {
-			account.setYearsOwned("yearsowned2");
-			assertEquals( "yearsowned2",account.getYearsOwned());
-		}
-		
-		@Test
-		public void testGetternoOfOwners() {
-
-			assertEquals( "noofowners",account.getNoOfOwners());
-		}
-
-		@Test
-		public void testSetternoOfOwners() {
-			account.setNoOfOwners("noofowners2");
-			assertEquals( "noofowners2",account.getNoOfOwners());
-		}
+	@Test
+	public void testSetnoOfOwners() {
+		TestConstants.MOCK_CAR_OBJECT2.setSurname("surname2");
+		assertEquals("surname2", TestConstants.MOCK_CAR_OBJECT2.getSurname());
+	}
+	
+	@Test
+	public void testGetForename() {
+		assertEquals("name", TestConstants.MOCK_CAR_OBJECT.getForenames());
+	}
+	
+	@Test
+	public void testSetForenames() {
+		TestConstants.MOCK_CAR_OBJECT2.setSurname("surname2");
+		assertEquals("surname2", TestConstants.MOCK_CAR_OBJECT2.getSurname());
+	}
 
 }

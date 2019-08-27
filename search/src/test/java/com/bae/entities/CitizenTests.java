@@ -5,88 +5,116 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.bae.entity.Citizen;
-
-import junit.framework.Assert;
+import com.bae.util.TestConstants;
 
 public class CitizenTests {
-		Citizen account = new Citizen("citizenid", "forename", "surname", 1, "homeaddress", "carplates");
 
-		
-		@Test
-		public void testGetterCitizenId() {
+	@Test
+	public void testGetCitizenId() {
+		assertEquals("id", TestConstants.MOCK_CITIZEN_OBJECT.getCitizenId());
+	}
 
-			assertEquals("citizenid",account.getCitizenId());
-		}
+	@Test
+	public void testSetCitizenId() {
+		TestConstants.MOCK_CITIZEN_OBJECT2.setCitizenId("id2");
+		assertEquals("id2", TestConstants.MOCK_CITIZEN_OBJECT2.getCitizenId());
 
-		@Test
-		public void testSetterCitizenId() {
-			account.setCitizenId("citizenid2");
-			assertEquals( "citizenid2",account.getCitizenId());
-			
-		}
-		
-		@Test
-		public void testGetterForeNames() {
+	}
 
-			assertEquals( "forename",account.getForenames());
-		}
+	@Test
+	public void testGetForeNames() {
+		assertEquals("name", TestConstants.MOCK_CITIZEN_OBJECT.getForenames());
+	}
 
-		@Test
-		public void testSetterForeNames() {
-			account.setForenames("forename2");
-			assertEquals("forename2" ,account.getForenames());
-			
-		}
-		
-		@Test
-		public void testGetterSurname() {
+	@Test
+	public void testSetForeNames() {
+		TestConstants.MOCK_CITIZEN_OBJECT2.setForenames("name2");
+		assertEquals("name2", TestConstants.MOCK_CITIZEN_OBJECT2.getForenames());
 
-			assertEquals( "surname", account.getSurname());
-		}
+	}
 
-		@Test
-		public void testSetterSurname() {
-			account.setSurname("surname2");
-			assertEquals( "surname2",account.getSurname());
-			
-		}
-		
-		@Test
-		public void testGetterDateOfBirth() {
+	@Test
+	public void testGetSurname() {
+		assertEquals("surname", TestConstants.MOCK_CITIZEN_OBJECT.getSurname());
+	}
 
-			assertEquals(1,account.getDateOfBirth());
-		}
+	@Test
+	public void testSetSurname() {
+		TestConstants.MOCK_CITIZEN_OBJECT2.setSurname("surname2");
+		assertEquals("surname2", TestConstants.MOCK_CITIZEN_OBJECT2.getSurname());
 
-		@Test
-		public void testSetterDateOfBirth() {
-			account.setDateOfBirth(2);
-			assertEquals(2, account.getDateOfBirth());
-			
-		}
-		
-		@Test
-		public void testGetterHomeAddress() {
+	}
 
-			assertEquals( "homeaddress", account.getHomeAddress());
-		}
+	@Test
+	public void testGetDateOfBirth() {
+		assertEquals("0", TestConstants.MOCK_CITIZEN_OBJECT.getDateOfBirth());
+	}
 
-		@Test
-		public void testSetterHomeAddress() {
-			account.setHomeAddress("homeaddress2");
-			assertEquals("homeaddress2", account.getHomeAddress());
-			
-		}
-		
-		@Test
-		public void testGetterVehicleRegistrationNumber() {
+	@Test
+	public void testSetDateOfBirth() {
+		TestConstants.MOCK_CITIZEN_OBJECT2.setDateOfBirth("2");
+		assertEquals("2", TestConstants.MOCK_CITIZEN_OBJECT2.getDateOfBirth());
 
-			assertEquals( "carplates", account.getVehicleRegistrationNumber());
-		}
+	}
 
-		@Test
-		public void testSetterVehicleRegistrationNumber() {
-			account.setVehicleRegistrationNumber("carplates2");
-			assertEquals("carplates2", account.getVehicleRegistrationNumber());
-			
-		}
+	@Test
+	public void testGetHomeAddress() {
+		assertEquals("homeAddress", TestConstants.MOCK_CITIZEN_OBJECT.getHomeAddress());
+	}
+
+	@Test
+	public void testSetHomeAddress() {
+		TestConstants.MOCK_CITIZEN_OBJECT2.setHomeAddress("homeAddress2");
+		assertEquals("homeAddress2", TestConstants.MOCK_CITIZEN_OBJECT2.getHomeAddress());
+
+	}
+
+	@Test
+	public void testGetCarReg() {
+		assertEquals("car_reg", TestConstants.MOCK_CITIZEN_OBJECT.getCarReg());
+	}
+
+	@Test
+	public void testSetCarReg() {
+		TestConstants.MOCK_CITIZEN_OBJECT2.setCarReg("car_reg2");
+		assertEquals("car_reg2", TestConstants.MOCK_CITIZEN_OBJECT2.getCarReg());
+
+	}
+
+	@Test
+	public void testGetAge() {
+		assertEquals("age", TestConstants.MOCK_CITIZEN_OBJECT.getAge());
+	}
+
+	@Test
+	public void testSetAge() {
+		TestConstants.MOCK_CITIZEN_OBJECT2.setAge("age2");
+		assertEquals("age2", TestConstants.MOCK_CITIZEN_OBJECT2.getAge());
+
+	}
+
+	@Test
+	public void testGetPhoneNumber() {
+		assertEquals("phoneNumber", TestConstants.MOCK_CITIZEN_OBJECT.getPhoneNumber());
+	}
+
+	@Test
+	public void testSetPhoneNumber() {
+		TestConstants.MOCK_CITIZEN_OBJECT2.setPhoneNumber("phoneNumber2");
+		assertEquals("phoneNumber2", TestConstants.MOCK_CITIZEN_OBJECT2.getPhoneNumber());
+
+	}
+
+	@Test
+	public void testGetGender() {
+		assertEquals("gender", TestConstants.MOCK_CITIZEN_OBJECT.getGender());
+	}
+
+	@Test
+	public void testSetGender() {
+		TestConstants.MOCK_CITIZEN_OBJECT2.setGender("gender2");
+		assertEquals("gender2", TestConstants.MOCK_CITIZEN_OBJECT2.getGender());
+
+	}
+
 }
