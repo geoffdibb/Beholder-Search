@@ -12,10 +12,12 @@ public class CitizenAssociates {
 	private String age;
 	private String sex;
 	private String phoneNumber;
+	private String placeOfBirth;
 	private Set<Associate> associateList;
 
-	public CitizenAssociates(String citizenId, String forenames, String surname, String dateOfBirth, String homeAddress,
-			String carReg, String age, String sex, String phoneNumber, Set<Associate> associateList) {
+	public CitizenAssociates(String citizenId, String forenames, String surname, String dateOfBirth,
+			String placeOfBirth, String homeAddress, String carReg, String age, String sex, String phoneNumber,
+			Set<Associate> associateList) {
 		super();
 		this.citizenId = citizenId;
 		this.forenames = forenames;
@@ -26,10 +28,19 @@ public class CitizenAssociates {
 		this.age = age;
 		this.sex = sex;
 		this.phoneNumber = phoneNumber;
+		this.placeOfBirth = placeOfBirth;
 		this.associateList = associateList;
 	}
 
 	public CitizenAssociates() {
+	}
+
+	public String getPlaceOfBirth() {
+		return placeOfBirth;
+	}
+
+	public void setPlaceOfBirth(String placeOfBirth) {
+		this.placeOfBirth = placeOfBirth;
 	}
 
 	public Set<Associate> getAssociateList() {
