@@ -10,12 +10,12 @@ public class CitizenAssociates {
 	private String homeAddress;
 	private String car_reg;
 	private String age;
-	private String gender;
+	private String sex;
 	private String phoneNumber;
 	private Set<Associate> associateList;
 
 	public CitizenAssociates(String citizenId, String forenames, String surname, String dateOfBirth, String homeAddress,
-			String carReg, String age, String gender, String phoneNumber, Set<Associate> associateList) {
+			String carReg, String age, String sex, String phoneNumber, Set<Associate> associateList) {
 		super();
 		this.citizenId = citizenId;
 		this.forenames = forenames;
@@ -24,7 +24,7 @@ public class CitizenAssociates {
 		this.homeAddress = homeAddress;
 		this.car_reg = carReg;
 		this.age = age;
-		this.gender = gender;
+		this.sex = sex;
 		this.phoneNumber = phoneNumber;
 		this.associateList = associateList;
 	}
@@ -56,12 +56,12 @@ public class CitizenAssociates {
 		this.age = age;
 	}
 
-	public String getGender() {
-		return gender;
+	public String getSex() {
+		return sex;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 
 	public String getCarReg() {

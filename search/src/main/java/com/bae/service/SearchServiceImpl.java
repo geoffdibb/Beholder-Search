@@ -40,7 +40,7 @@ public class SearchServiceImpl implements SearchService {
 		switch (category.toLowerCase()) {
 		case "forenames":
 			return getForenames(searchTerm);
-		case "name":
+		case "surname":
 			return getSurname(searchTerm);
 		case "car reg":
 			return getSuspectCar(searchTerm);
