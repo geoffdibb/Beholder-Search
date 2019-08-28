@@ -4,7 +4,7 @@ public class Associate {
 
 	private String forenames;
 	private String surname;
-	private String phonecalls;
+	private String calls;
 	private String latest_call;
 	private String citizenId;
 	private String associateId;
@@ -14,7 +14,7 @@ public class Associate {
 		super();
 		this.forenames = forenames;
 		this.surname = surname;
-		this.phonecalls = phonecalls;
+		this.calls = phonecalls;
 		this.latest_call = latestPhoneCall;
 		this.citizenId = citizenId;
 		this.associateId = associateId;
@@ -49,11 +49,11 @@ public class Associate {
 	}
 
 	public String getNumberOfPhoneCalls() {
-		return phonecalls;
+		return calls;
 	}
 
 	public void setNumberOfPhoneCalls(String phoneCalls) {
-		this.phonecalls = phoneCalls;
+		this.calls = phoneCalls;
 	}
 
 	public String getLatestPhoneCall() {

@@ -3,6 +3,7 @@ package com.bae.service;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import com.bae.entity.Associate;
 import com.bae.entity.Citizen;
 import com.bae.entity.SuspectCar;
 import com.bae.repository.AssociateRepository;
+import com.bae.repository.CitizenAssociatesRepository;
 import com.bae.repository.CitizenRepository;
 import com.bae.repository.SuspectCarRepository;
 
@@ -20,13 +22,15 @@ public class SearchServiceImpl implements SearchService {
 	private CitizenRepository citizenRepo;
 	private SuspectCarRepository suspectRepo;
 	private AssociateRepository associateRepo;
+	private CitizenAssociatesRepository citizenAssociateRepo;
 
 	@Autowired
 	public SearchServiceImpl(CitizenRepository citizenRepo, SuspectCarRepository suspectRepo,
-			AssociateRepository associateRepo) {
+			AssociateRepository associateRepo, CitizenAssociatesRepository citizenAssociateRepo) {
 		this.citizenRepo = citizenRepo;
 		this.suspectRepo = suspectRepo;
 		this.associateRepo = associateRepo;
+		this.citizenAssociateRepo = citizenAssociateRepo;
 	}
 
 	public SearchServiceImpl() {
@@ -34,8 +38,10 @@ public class SearchServiceImpl implements SearchService {
 
 	public List<Object> search(String category, String searchTerm) {
 		switch (category.toLowerCase()) {
-		case "name":
-			return getName(searchTerm);
+		case "forenames":
+			return getForenames(searchTerm);
+		case "surname":
+			return getSurname(searchTerm);
 		case "car reg":
 			return getSuspectCar(searchTerm);
 		case "getassociates":
@@ -45,7 +51,6 @@ public class SearchServiceImpl implements SearchService {
 		}
 	}
 
-	@Override
 	public List<Object> getName(String name) {
 		List<Object> foundList = new ArrayList<>();
 		List<Citizen> list = citizenRepo.findAll();
@@ -58,6 +63,26 @@ public class SearchServiceImpl implements SearchService {
 		}
 		return foundList;
 	}
+
+	@Override
+	public List<Object> getSurname(String name) {
+		return this.citizenAssociateRepo.findBySurnameRegexIgnoreCase(name).stream().map(ca -> ca)
+				.collect(Collectors.toList());
+	}
+
+	@Override
+	public List<Object> getForenames(String name) {
+		return this.citizenAssociateRepo.findByForenamesRegexIgnoreCase(name).stream().map(ca -> ca)
+				.collect(Collectors.toList());
+	}
+
+//	@Override
+//	public List<Object> getName(String name) {
+//		List<CitizenAssociates> bySurname = this.citizenAssociateRepo.findBySurnameRegexIgnoreCase(name);
+//		List<CitizenAssociates> byForenames = this.citizenAssociateRepo.findByForenamesRegexIgnoreCase(name);
+//		bySurname.addAll(byForenames);
+//		return bySurname.stream().map(ca -> ca).collect(Collectors.toList());
+//	}
 
 	@Override
 	public List<Object> getLocation(String location) {

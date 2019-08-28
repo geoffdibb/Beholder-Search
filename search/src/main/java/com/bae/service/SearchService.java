@@ -9,7 +9,9 @@ public interface SearchService {
 
 	List<Object> search(String category, String searchTerm);
 
-	List<Object> getName(String name);
+	List<Object> getForenames(String name);
+
+	List<Object> getSurname(String name);
 
 	List<Object> getLocation(String location);
 
