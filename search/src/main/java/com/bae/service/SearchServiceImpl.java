@@ -51,19 +51,18 @@ public class SearchServiceImpl implements SearchService {
 		}
 	}
 
-//	@Override
-//	public List<Object> getName(String name) {
-//		List<Object> foundList = new ArrayList<>();
-//		List<Citizen> list = citizenRepo.findAll();
-//		for (int i = 0; i < list.size(); i++) {
-//			String dbName = (list.get(i).getForenames().toLowerCase() + " " + list.get(i).getSurname().toLowerCase());
-//			if (dbName.contains(name.toLowerCase())) {
-//				foundList.add(list.get(i));
-//			}
-//
-//		}
-//		return foundList;
-//	}
+	public List<Object> getName(String name) {
+		List<Object> foundList = new ArrayList<>();
+		List<Citizen> list = citizenRepo.findAll();
+		for (int i = 0; i < list.size(); i++) {
+			String dbName = (list.get(i).getForenames().toLowerCase() + " " + list.get(i).getSurname().toLowerCase());
+			if (dbName.contains(name.toLowerCase())) {
+				foundList.add(list.get(i));
+			}
+
+		}
+		return foundList;
+	}
 
 	@Override
 	public List<Object> getSurname(String name) {
